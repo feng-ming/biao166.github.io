@@ -67,12 +67,12 @@
 <p>px就是表示pixel，像素，是屏幕上显示数据的最基本的点；pt就是point，是印刷行业常用单位，等于1/72英寸。</p>
 <p>这样很明白，px是一个点，它不是自然界的长度单位，谁能说出一个“点”有多长多大么？可以画的很小，也可以很大。如果点很小，那画面就清晰，我们称它为“分辨率高”，反之，就是“分辨率低”。所以，“点”的大小是会“变”的，也称为“相对长度”。pt全称为point，但中文不叫“点”，确切的说法是一个专用的印刷单位 “磅”，大小为1/72英寸。所以它是一个自然界标准的长度单位，也称为“绝对长度”。因此就有这样的说法，pixel是相对大小，而point是绝对大小。</p>
 <h3>Css3 新单位</h3>
-<img src='//libiao.qiniudn.com/uploads/2013/05/Css3-units.png?1386510128489' />
+<img src='/_uploads/2013/05/Css3-units.png?1386514774048' />
 
 
 <p>Css3 中引入了一些新的单位（<a href="http://dev.w3.org/csswg/css-values/#length-value" target="_blank">数据来源</a>）：</p>
 <p>显然 vw、vh、vmin、vmax 是针对移动设备的，会随着视窗的大小而变化,暂且不提；而我所感兴趣的是 <code>rem</code> 这个单位，先看下它的 support（数据来源 <a href="http://caniuse.com/" target="_blank"><a href="http://caniuse.com/">http://caniuse.com/</a></a>）。</p>
-<p><img src="http://www.libiao.name/wp-content/uploads/2013/05/rem-supported.png" alt="rem-supported"></p>
+<p><img src="http://www.libiao.name/wp-content/_uploads/2013/05/rem-supported.png" alt="rem-supported"></p>
 <p>不错，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都已经支持，而我们也知道 根元素 html 的值在各个浏览器里边都是出奇的统一（16px）,这也就意味着我们可以肆意的使用 <code>rem</code> ,尤其是在移动端。</p>
 <p>延伸扩展：Css 中单位真的只有这些么？ 注意我标题为[长度单位]，隆重请出其他单位：</p>
 <blockquote>
@@ -120,9 +120,9 @@
         <p>好久都没碰到过单独在IE8里出现问题的情况了…</p>
 <h3>问题描述：</h3>
 <p>链接(a)hover效果在IE8会失效，如果你用Css或Javascript设置了“filter”属性的话。</p>
-<img src='//libiao.qiniudn.com/uploads/2013/02/ie8-hover-bug.jpg?1386510128489' />
+<img src='/_uploads/2013/02/ie8-hover-bug.jpg?1386514774048' />
 
-<img src='//libiao.qiniudn.com/uploads/2013/02/ie8-hover-bug2.png?1386510128489' />
+<img src='/_uploads/2013/02/ie8-hover-bug2.png?1386514774048' />
 
 
 <h3>解决办法：</h3>
@@ -256,7 +256,7 @@
       
         <p>十点多了接到反馈，论坛IE报错：缺少标识符、字符串或数字，哎，赶紧解决！</p>
 <p>开始调试吧，首先还原错误额！</p>
-<img src='//libiao.qiniudn.com/uploads/2011/11/IE-脚本调试.png?1386510128489' />
+<img src='/_uploads/2011/11/IE-脚本调试.png?1386514774048' />
 
 
 <p>将两个勾去掉，了解报错的大概位置,貌似这个位置没有过改动，想想自己白天改动了什么东西额，网上找下，原因最大可能是<strong>js数组最后一个元素后面添加了“,”</strong>。这个，貌似我真的添加了一个数组，关于bshare的自定义设置，看下吧，好家伙，貌似最后一个真的多了一个逗号，在火狐下轻松通过，却在IE给我做小动作。</p>
@@ -332,10 +332,10 @@
     <div class="entry">
       
         <p>用了快半个月的<a href="http://www.libiao.name/aptana-studio.html" title="Aptana Studio 3初试" target="_blank">Aptana Studio 3</a>，废话少说，Aptana Studio 3除了自带的一些theme之外，网络上几乎找不到相关资源，于是花了点时间自己配置了一个，效果看截图</p>
-<p><img &quot;PHP&quot;='' src='//libiao.qiniudn.com/uploads/2011/09/PHP.png?1386510128489' /><br> PHP</p>
-<p><img &quot;HTML&quot;='' src='//libiao.qiniudn.com/uploads/2011/09/HTML.png?1386510128489' /><br> HTML</p>
-<p><img &quot;JAVA&quot;='' src='//libiao.qiniudn.com/uploads/2011/09/JAVA.png?1386510128489' /><br> JAVA</p>
-<p>下载地址：<a href="http://www.libiao.name/wp-content/uploads/2011/09/sunset.zip" target="_blank">sunset</a></p>
+<p><img &quot;PHP&quot;='' src='/_uploads/2011/09/PHP.png?1386514774048' /><br> PHP</p>
+<p><img &quot;HTML&quot;='' src='/_uploads/2011/09/HTML.png?1386514774048' /><br> HTML</p>
+<p><img &quot;JAVA&quot;='' src='/_uploads/2011/09/JAVA.png?1386514774048' /><br> JAVA</p>
+<p>下载地址：<a href="http://www.libiao.name/wp-content/_uploads/2011/09/sunset.zip" target="_blank">sunset</a></p>
 
       
     </div>
@@ -373,9 +373,9 @@
 <p><div>2、问题下：图一：火狐下查看，行高31px,opera查看，行高32px。</div></p>
 <p><div>对比两种情况，唯一不同是图2下出现了英文字体，去除后查看，恢复正常，得出结论，opera对中英文字体的处理没达到一阵。</div></p>
 <p><div>再次检查代码，行高是用line-height设置的，猜想可能原因是没有定义height，于是设定height值，正常，至此，问题解决，仅此一记…</div><br>&lt;li class=“a”&gt;&lt;a href=“javaScript:void(0)”&gt;我的作品&lt;/a&gt;&lt;/li&gt;</p>
-<p><a href="http://www.libiao.name/wp-content/uploads/2011/09/2.jpg" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2011/09/2.jpg" alt="" title="2"></a></p>
+<p><a href="http://www.libiao.name/wp-content/_uploads/2011/09/2.jpg" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2011/09/2.jpg" alt="" title="2"></a></p>
 <p>&lt;li class=“a”&gt;&lt;a href=“javaScript:void(0)”&gt;$space[username]的作品&lt;/a&gt;&lt;/li&gt;</p>
-<p><a href="http://www.libiao.name/wp-content/uploads/2011/09/1.jpg" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2011/09/1.jpg" alt="" title="1"></a></p>
+<p><a href="http://www.libiao.name/wp-content/_uploads/2011/09/1.jpg" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2011/09/1.jpg" alt="" title="1"></a></p>
 <p>在opera下边出现一个这样的bug</p>
 
       
@@ -410,7 +410,7 @@
       
         <p>看标题有点模糊，其实就是之前我们引入jquery的时候一般都会选择Goolge的api，但这段时间G<em>F</em>W和其他诸多因素，速度奇慢，而Sina推出了SAE之后，附带的公共资源库是现今我认为可以完全替代Google api的，其采用CDN技术之后再国内的访问速度是绝对理想的。</p>
 <p>其不仅支持包含jquery，常用的mootools和prototype，yui等都在内….众前端之福！</p>
-<img src='//libiao.qiniudn.com/uploads/2011/09/sina-app-engine.png?1386510128489' />
+<img src='/_uploads/2011/09/sina-app-engine.png?1386514774048' />
 
 
 <p>看官方的介绍吧
@@ -450,11 +450,11 @@
       
         <p>不需要什么语言来表示吧，主要看图（图上已经贴上代码了）。</p>
 <h3>1、两列，右边栏_ct2</h3>
-<img &quot;ct2&quot;='' src='//libiao.qiniudn.com/uploads/2011/08/ct2.png?1386510128489' />
+<img &quot;ct2&quot;='' src='/_uploads/2011/08/ct2.png?1386514774048' />
 
 
 <h3>2、两列-左app   ct2_a</h3>
-<img &quot;ct2_a&quot;='' src='//libiao.qiniudn.com/uploads/2011/08/ct2_a.png?1386510128489' />
+<img &quot;ct2_a&quot;='' src='/_uploads/2011/08/ct2_a.png?1386514774048' />
 
 
 
@@ -546,7 +546,7 @@
     <div class="entry">
       
         <p>在幸福收藏夹看到《<a href="http://sofish.de/1679" target="_blank">关于图片按比例自适应缩放</a>》比较感兴趣，最近刚接触jQuery,突然想我是否可以改用jquery改写呢，于是就有了<a href="http://www.libiao.name/img_auto_adjust_zoom.html" title="JQUERY版图片自适应缩放" target="_blank">本文</a>，欲看原文请从上边链接前往。</p>
-<img src='//libiao.qiniudn.com/uploads/2011/04/img_auto_adjust_zoom-jquery.jpg?1386510128489' />
+<img src='/_uploads/2011/04/img_auto_adjust_zoom-jquery.jpg?1386514774048' />
 
 
 
@@ -751,7 +751,7 @@ a{ color: blue !important; }</span></code></pre>
     <div class="entry">
       
         <p>接触jquery有一段时间了，终于独立鼓捣出这个东西，挺简单的,但代码的复杂却估计会让高手汗死…</p>
-<p><a href="http://www.libiao.name/wp-content/uploads/2011/03/大事记demo.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2011/03/大事记demo.png" alt="大事记demo" title="大事记demo"></a></p>
+<p><a href="http://www.libiao.name/wp-content/_uploads/2011/03/大事记demo.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2011/03/大事记demo.png" alt="大事记demo" title="大事记demo"></a></p>
 <blockquote>
 <p>$(this).find(“li:not(:first-child)”).parent().parent().prev().children().toggleClass(&quot;not_one&quot;)<br>暂时还没找到上边这段代码的替代方法，只能先这样呢。<br>囧，没办法，只有这种水平。。。。。<br>整个过程是纠结万分。。</p>
 </blockquote>
@@ -790,20 +790,20 @@ a{ color: blue !important; }</span></code></pre>
         <p><strong>在列表里如何实现两端对齐呢？</strong></p>
 <p>淘宝和人人网给我们示范了两种方式，都是通过增大父标签的宽度来实现看上去的“两端对齐”效果。</p>
 <p>请先看淘宝的截图：</p>
-<img src='//libiao.qiniudn.com/uploads/2011/03/1.jpg?1386510128489' />
+<img src='/_uploads/2011/03/1.jpg?1386514774048' />
 
-<img src='//libiao.qiniudn.com/uploads/2011/03/2.jpg?1386510128489' />
+<img src='/_uploads/2011/03/2.jpg?1386514774048' />
 
-<img src='//libiao.qiniudn.com/uploads/2011/03/3.jpg?1386510128489' />
+<img src='/_uploads/2011/03/3.jpg?1386514774048' />
 
 
 <p><strong>淘宝父标签css</strong></p>
-<img src='//libiao.qiniudn.com/uploads/2011/03/4.jpg?1386510128489' />
+<img src='/_uploads/2011/03/4.jpg?1386514774048' />
 
 
 <p><strong>淘宝li标签</strong></p>
 <p>而人人网的有点点区别，是通过margin-right为负值来增加父标签的宽度的，请看</p>
-<img src='//libiao.qiniudn.com/uploads/2011/03/5.jpg?1386510128489' />
+<img src='/_uploads/2011/03/5.jpg?1386514774048' />
 
       
     </div>
@@ -835,7 +835,7 @@ a{ color: blue !important; }</span></code></pre>
     </header>
     <div class="entry">
       
-        <img src='//libiao.qiniudn.com/uploads/2011/02/server-error-1024x337.png?1386510128489' />
+        <img src='/_uploads/2011/02/server-error-1024x337.png?1386514774048' />
 
 
 <p>偶然在调试.NET搭建的站点时出现了server error in ‘/’ application错误错误，接连排除了IIS和.net的可能性错误，却还是没找到答案。</p>

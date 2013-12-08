@@ -72,7 +72,7 @@ blockquote, q {quotes: none;}blockquote:before,blockquote:after,q:before,q:after
 
 <p><strong>前言</strong>：对于一段没有高亮和缩进的代码，我相信你是没有兴趣去仔细研读的，同样在我们的技术博文中，经常需要插入各种code，你会选择何种方式？</p>
 <p>比如在 wordpress 中，常用的高亮插件有 SyntaxHighlighter、Syntax Highlighter、Google Syntax Highlighter for WordPress 等等，也有不借助插件比如 code2html，CodeRenderUnmi、代码发芽网等等。</p>
-<p><img src="http://www.libiao.name/wp-content/uploads/2013/04/SyntaxHighlighter-Evolved.png" alt="SyntaxHighlighter Evolved"></p>
+<p><img src="http://www.libiao.name/wp-content/_uploads/2013/04/SyntaxHighlighter-Evolved.png" alt="SyntaxHighlighter Evolved"></p>
 <p>使用高亮插件的不足是会载入一大段 css 和 js 文件，且只有有限的主题，样式控制不方便，当然不适用插件的话更需要每次都需要打开在线网站或者软件。有没有一个既不需要借助上面的工具，而又能提供有效定制的方法呢？</p>
 <p>在 sublime text 编辑器的众多插件中我找到了 <a href="https://github.com/n1k0/SublimeHighlight/" title="SublimeHighlight" target="_blank"><strong>SublimeHighlight</strong></a> 这个插件，应该可以解决掉上面提出的问题.</p>
 <p>首先你需要安装 SublimeHighlight 插件，在 install package list 中是没有这个插件的，你可以选择 add Repository ,将 “<a href="https://github.com/n1k0/SublimeHighlight”添加进去，然后在" target="_blank">https://github.com/n1k0/SublimeHighlight”添加进去，然后在</a> Install Package, 或者通过终端进入 sublime text 的插件目录，什么？你不知道插件目录在哪里，通过 Preferences =》Browse Packages…,再查看地址栏，然后在终端 cd 到插件目录<br> <code>git clone https://github.com/n1k0/SublimeHighlight.git &#39;SublimeHighlight&#39;</code><br> 回车安装。</p>
@@ -104,8 +104,8 @@ blockquote, q {quotes: none;}blockquote:before,blockquote:after,q:before,q:after
 
 </blockquote>
 <p>重启sublime，然后在你的右键菜单中就可以看到 copy as html，copy as rtf这两个选项，我们需要的是第一项，果断选择代码，copy as html，粘贴，保存为网页，通过浏览器打开，怎么样，样式出来了吧。</p>
-<p><img src="http://www.libiao.name/wp-content/uploads/2013/04/highlight.png" alt="highlight"></p>
-<p><img src="http://www.libiao.name/wp-content/uploads/2013/04/highlight2.png" alt="highlight2"></p>
+<p><img src="http://www.libiao.name/wp-content/_uploads/2013/04/highlight.png" alt="highlight"></p>
+<p><img src="http://www.libiao.name/wp-content/_uploads/2013/04/highlight2.png" alt="highlight2"></p>
 <p>查看复制出来的代码，发现是一个完整的 html 文档，包含一段style样式和 div.highlight, style跟我们在配置里的主题相关，提取出来，可以直接放入我们自己的主题 style 文件中，而 div.highlight 哪里需要就复制到哪里（注意在代码模式下）。</p>
 
       
