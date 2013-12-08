@@ -4,7 +4,7 @@
   <subtitle><![CDATA[奔跑于泥地中为梦想]]></subtitle>
   <link href="http://libiao.name/atom.xml" rel="self"/>
   <link href="http://libiao.name"/>
-  <updated>2013-12-08T14:59:36.707Z</updated>
+  <updated>2013-12-08T15:02:56.001Z</updated>
   <id>http://libiao.name/</id>
   <author>
     <name><![CDATA[biao166]]></name>
@@ -125,18 +125,20 @@
     <link href="http://libiao.name/2013/css3-length-units.html"/>
     <id>http://libiao.name/2013/css3-length-units.html</id>
     <published>2013-05-05T07:01:38.000Z</published>
-    <updated>2013-12-08T14:10:11.000Z</updated>
+    <updated>2013-12-08T15:02:36.000Z</updated>
     <content type="html"><![CDATA[<p>在样式表里边，我们最常看到的是 px、%、em 这三个单位，还有可能用到的是 pt ,其他的都几乎很少用到，如 in、cm、mm 等。</p>
 <h3>我们先来搞清楚 px 和 pt 的区别？</h3>
 <p>px就是表示pixel，像素，是屏幕上显示数据的最基本的点；pt就是point，是印刷行业常用单位，等于1/72英寸。</p>
 <p>这样很明白，px是一个点，它不是自然界的长度单位，谁能说出一个“点”有多长多大么？可以画的很小，也可以很大。如果点很小，那画面就清晰，我们称它为“分辨率高”，反之，就是“分辨率低”。所以，“点”的大小是会“变”的，也称为“相对长度”。pt全称为point，但中文不叫“点”，确切的说法是一个专用的印刷单位 “磅”，大小为1/72英寸。所以它是一个自然界标准的长度单位，也称为“绝对长度”。因此就有这样的说法，pixel是相对大小，而point是绝对大小。</p>
 <h3>Css3 新单位</h3>
-<img src='/_uploads/2013/05/Css3-units.png?1386514774048' />
+<img src='//libiao.qiniudn.com/_uploads/2013/05/Css3-units.png?1386514974359' />
 
 
 <p>Css3 中引入了一些新的单位（<a href="http://dev.w3.org/csswg/css-values/#length-value" target="_blank">数据来源</a>）：</p>
 <p>显然 vw、vh、vmin、vmax 是针对移动设备的，会随着视窗的大小而变化,暂且不提；而我所感兴趣的是 <code>rem</code> 这个单位，先看下它的 support（数据来源 <a href="http://caniuse.com/" target="_blank"><a href="http://caniuse.com/">http://caniuse.com/</a></a>）。</p>
-<p><img src="http://www.libiao.name/wp-content/_uploads/2013/05/rem-supported.png" alt="rem-supported"></p>
+<img src='//libiao.qiniudn.com/_uploads/2013/05/rem-supported.png?1386514974359' />
+
+
 <p>不错，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都已经支持，而我们也知道 根元素 html 的值在各个浏览器里边都是出奇的统一（16px）,这也就意味着我们可以肆意的使用 <code>rem</code> ,尤其是在移动端。</p>
 <p>延伸扩展：Css 中单位真的只有这些么？ 注意我标题为[长度单位]，隆重请出其他单位：</p>
 <blockquote>
@@ -166,7 +168,7 @@
 <p>说起 web 调试工具，我们可以如数家珍的列出 firebug、chrome开发者工具、IE开发者工具等，这大多是桌面端的，今天我们来介绍: Weinre.</p>
 <h2>一. <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank">Weinre</a>是什么</h2>
 <p>Weinre 意思就是 Web In Spector Remote，即是一种远程 web 调试工具。我们用 Weinre 可以在电脑上即时的更改手机上对应网页的页面元素、样式表，或是查看Javascript 变量，同时还可以看到手机上页面的错误和警告信息.</p>
-<img src='/_uploads/2013/05/Weinre组成结构.png?1386514774048' title='Weinre组成结构' />
+<img src='//libiao.qiniudn.com/_uploads/2013/05/Weinre组成结构.png?1386514974359' title='Weinre组成结构' />
 
 
 <blockquote>
@@ -181,7 +183,7 @@
 </blockquote>
 <h2>三. 开启服务</h2>
 <p>安装完成，直接 <code>weinre -help</code> 查看帮助。</p>
-<img src='/_uploads/2013/05/weinre-options.png?1386514774048' title='weinre-options' />
+<img src='//libiao.qiniudn.com/_uploads/2013/05/weinre-options.png?1386514974359' title='weinre-options' />
 
 
 <p><a id="more"></a></p>
@@ -189,12 +191,12 @@
 
 <p>这样就开启了 192.168.1.14 这台机器上的 weinre 服务， 默认端口是 8080</p>
 <p>访问 <cite>192.168.1.14:8080</cite>（需在 webkit 内核浏览器内）界面如下</p>
-<img inspector='' remote&quot;='' src='/_uploads/2013/05/web-inspector-remote.png?1386514774048' title='web' />
+<img inspector='' remote&quot;='' src='//libiao.qiniudn.com/_uploads/2013/05/web-inspector-remote.png?1386514974359' title='web' />
 
 
 <p>将 <code>http://192.168.1.14:8080/target/target-script-min.js#anonymous</code> 插入到目标调试页面。</p>
 <p>按照提示访问 <cite><a href="http://192.168.1.14:8080/client/#anonymous" target="_blank">http://192.168.1.14:8080/client/#anonymous</a></cite>, 界面如下</p>
-<img src='/_uploads/2013/05/weinre界面.png?1386514774048' title='weinre界面' />
+<img src='//libiao.qiniudn.com/_uploads/2013/05/weinre界面.png?1386514974359' title='weinre界面' />
 
 
 <p>其中包含了 weinre 服务的基本状况， Elements、Resources、Network、Timeline、Console几个 tab 界面，活生生一个 Chrome 开发者工具界面，如何操作这就不必说了吧。试用几天之后感觉不错，唯一的遗憾就是不能直接 Js调试。</p>
@@ -314,9 +316,9 @@
     <content type="html"><![CDATA[<p>好久都没碰到过单独在IE8里出现问题的情况了…</p>
 <h3>问题描述：</h3>
 <p>链接(a)hover效果在IE8会失效，如果你用Css或Javascript设置了“filter”属性的话。</p>
-<img src='/_uploads/2013/02/ie8-hover-bug.jpg?1386514774048' />
+<img src='//libiao.qiniudn.com/_uploads/2013/02/ie8-hover-bug.jpg?1386514974359' />
 
-<img src='/_uploads/2013/02/ie8-hover-bug2.png?1386514774048' />
+<img src='//libiao.qiniudn.com/_uploads/2013/02/ie8-hover-bug2.png?1386514974359' />
 
 
 <h3>解决办法：</h3>
@@ -404,7 +406,7 @@
     <id>http://libiao.name/2012/terminal-has-not-been-tested-with-the-plugin.html</id>
     <published>2012-12-12T16:05:07.000Z</published>
     <updated>2013-12-08T14:10:11.000Z</updated>
-    <content type="html"><![CDATA[<img src='/_uploads/2012/12/Terminal-.jpg?1386514774048' />
+    <content type="html"><![CDATA[<img src='//libiao.qiniudn.com/_uploads/2012/12/Terminal-.jpg?1386514974359' />
 
 
 <p>Terminal 2.3(v309) has not been tested with the plugin TerminalColours (null)(v1.0). As a precaution, it has not been loaded. Please contact the plugin developer for further information.<br>小白对于这样的错都手足无措了。</p>
@@ -555,7 +557,7 @@
     <updated>2013-12-08T14:10:11.000Z</updated>
     <content type="html"><![CDATA[<p>关于如何安装插件请移步<a href="http://www.jankerli.com/?p=1359" title="关于使用Sublime Text 2的那些事儿" target="_blank">《关于使用Sublime Text 2的那些事儿》</a></p>
 <p>由于在notepad++里面的zencoding快捷键是设置成ctrl+e，所以在sublime里边也想要改过来（默认是tab），方法如下</p>
-<img src='/_uploads/2012/02/sublime-text-2-zencoding.png?1386514774048' />
+<img src='//libiao.qiniudn.com/_uploads/2012/02/sublime-text-2-zencoding.png?1386514974359' />
 
 
 <p>菜单-preferences =&gt; key bindings - default =&gt; 搜寻tab</p>
@@ -592,7 +594,7 @@
 <script src="https://gist.github.com/4205217.js?file=w3.xml"></script>
 
 <p>Image标签内是一个base64的图像</p>
-<img src='/_uploads/2011/12/w3school.bmp?1386514774048' />
+<img src='//libiao.qiniudn.com/_uploads/2011/12/w3school.bmp?1386514974359' />
 
 
 <p><span style="color: #666699;"><strong>关于搜索栏图标的做法：</strong></span></p>
