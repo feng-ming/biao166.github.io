@@ -52,308 +52,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2010-07-30T11:35:20.000Z"><a href="/2010/webpage-copy-03.html">7月 30 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/webpage-copy-03.html">练手作品3——博客</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3>呵呵，先上图，你就知道怎么回事呢！！！</h3>
-<p><a href="http://lh5.ggpht.com/_YLGeaUrsp2A/THjen1HVBnI/AAAAAAAABuU/_X8fQHX3hc4/biao166.jpg?imgmax=576" target="_blank"><img src="http://lh5.ggpht.com/_YLGeaUrsp2A/THjen1HVBnI/AAAAAAAABuU/_X8fQHX3hc4/biao166.jpg?imgmax=320" alt="biao166.jpg"></a></p>
-<p>仿制的目标是underone的G7V4，呵呵，还有一部分没完善，头部的背景，底部的版权之类的额，先放着吧！！！</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-07-28T03:27:10.000Z"><a href="/2010/baidu-weight.html">7月 28 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/baidu-weight.html">百度空间权重之无聊探讨</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><strong>不记得是什么时候有百度空间去了，反正是比较久了。</strong></p>
-<p>之前随便放了几篇文章放在空间里，前一个星期去看的时候访问量是500多，平均120次/篇，按照百度给自己百度空间的高权限来说，正常！！！</p>
-<p>之后我就把我博客的自认为觉得还过得去的最近的20篇文章全部搬了过去，并稍微美化了一下。</p>
-<p>吼吼，今天登陆上去，显示已有1200访问数，这个挺高还挺快的的，如果江湖镖局博客能这么增长那岂不早发了，哎！！！</p>
-<p>仅此一记，谢谢。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-07-27T08:42:42.000Z"><a href="/2010/dedeampz.html">7月 27 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/dedeampz.html">使用DedeAMPZ创建多个站点本地测试的设置方法</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>对于PHP的本地测试，可以用appserv等，但界面对于我们这种新手来说太难以琢磨了，于是投奔了dede的<strong>dedeampz</strong>.</p>
-<p>下面说下<strong>DEDEAMPZ</strong>的本地多站点配置方法。来源于网络，还原于网络吧。。。。。。</p>
-<p>在<strong>DEDEAMPZ</strong>界面中点“修改web站点设置”</p>
-<blockquote>
-<p>NameVirtualHost *:80</p>
-<h2>VhostStart</h2>
-<h1>这里默认站点的设置，未知域名如果IP与服务器一致，也会指向此站点</h1>
-<h1>如果你想通过IP访问方式或非法域名不能访问你的服务，把这站点的目录设为一个不存在目录即可</h1>
-<p>&lt;VirtualHost *:80&gt;</p>
-<p>ServerAdmin admin@myhost.com</p>
-<p>DocumentRoot “D:/DedeAMPZ/WebRoot/Default”</p>
-<p>php_admin_value open_basedir “D:/DedeAMPZ/WebRoot/Default”</p>
-<p>ServerName localhost</p>
-<p>ErrorLog logs/default-error_log</p>
-<p>CustomLog logs/default-access_log common</p>
-<p>&lt;/VirtualHost&gt;</p>
-<h1>这里是虚拟主机(服务器上运行多个站点)设置的一个例子</h1>
-<h1>如果你要增加网站，把下面配置复制一份，修改目录和域名即可</h1>
-<p>&lt;VirtualHost *:80&gt;</p>
-<p>ServerAdmin admin@myhost.com</p>
-<p>ServerName www.test.com</p>
-<p>ServerAlias test.com</p>
-<p>DocumentRoot “D:/DedeAMPZ/WebRoot/test.com”</p>
-<p>php_admin_value open_basedir “D:/DedeAMPZ/WebRoot/test.com”</p>
-<p>ErrorLog logs/all-error_log</p>
-<p>CustomLog logs/all-access_log common</p>
-<p>&lt;/VirtualHost&gt;</p>
-<h2>VhostEnd</h2>
-<p>如果你只调试一个网站，那么不必添加虚拟主机直接将源码解压到“DedeAMPZ\WebRoot\Default”</p>
-</blockquote>
-<p>如果你想在此环境下调试多个网站那么可以按说明来添加虚拟主机，其中需要注意的几点是：
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2010/dedeampz.html#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-07-27T06:22:43.000Z"><a href="/2010/s6o-15.html">7月 27 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/s6o-15.html">s6o机子15款最实用软件合集</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3>玩智能机也就是这一年半的时间，平时装软件无数，但最后手机上只剩下了这么些软件，特写下来与众童鞋分享。不提供下载地址，如有机油没找到，留言可以提供帮助(本人机型nokia 6120c，属于Nokia 3rd)。</h3>
-<p><strong>1,、QQ</strong></p>
-<p>严重推荐2008正式版和2010最新版。省电省流量而且不很占用内存。试了才知道。</p>
-<p><strong>2,、飞信</strong></p>
-<p>还是用老版本吧，虽说最新的3.1不错，但追求画面的同时还是考虑下内存吧，我的好像是冥风2.1，非常好用的一个版本。</p>
-<p><strong>3,、浏览器</strong></p>
-<p>还是那句老话，uc吧，现在最新的QQ浏览器也还能将就。</p>
-<p><strong>4,、电话短信过滤</strong></p>
-<p>这类的几乎都用过，最后停留在了来电通，定制能力强，而且还挺实用，没有花哨的功能，关于电话短信过滤和来电去电设置可参考这两篇文章</p>
-<blockquote>
-<p><a href="http://www.libiao.name/laidiantong.html/" title="来电通完美过滤设置" target="_blank">完美过滤的设置</a></p>
-<p><a href="http://www.libiao.name/laidiantongpeizhi.html" title="Permanent Link to 来电通完美配置8款(4竖屏+4横屏)" target="_blank">来电通完美配置8款(4竖屏+4横屏) </a><br><strong> 5.、任务管理</strong></p>
-</blockquote>
-<p>严重推荐OPDA汉化的JBAK TASKMAN,很好用哦！</p>
-<p><strong> 6、文件管理——-X-plore</strong></p>
-<p>X-plore 1.42吧，有破解完全版了。神器呀…………</p>
-<p><strong>7、破解——-ROMPatch</strong></p>
-<p>没破解，你玩什么智能机哦，赶紧去吧！
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2010/s6o-15.html#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-07-26T01:26:42.000Z"><a href="/2010/laidiantongpeizhi.html">7月 26 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/laidiantongpeizhi.html">来电通完美配置8款(4竖屏+4横屏)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>来电通非官方精美配置8款(4竖屏+4横屏)<br>首先<strong>上图</strong>：</p>
-<p><a href="http://www.libiao.name/wp-content/uploads/2010/07/laidiantong.jpg" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2010/07/laidiantong-300x133.jpg" alt="" title="来电通"></a></p>
-<p><strong>使用方法</strong>：将配置文件放入<strong>C:\Data\CallMaster</strong>（不需破解） 文件夹内。然后进入来电通，左软键(选项)——公共设置——配置文件管理，在此处选择启用(选项——启用)自己喜欢的配置风格即可。建议使用最新版，功能较全，加载速度较快，Bug相对较少。</p>
-<p><strong>可能会遇到的问题</strong>：字体出现口口的话，可调字体使之完善。</p>
-<p><strong>解决方法：</strong></p>
-<ol>
-<li>来电信息显示和去电信息显示里每一行的字体都调为Sans MT 936_S60或你手机内所用的第三方字体；</li>
-<li>来电信息显示和去电信息显示—字体设置—字体处调为Sans MT 936_S60或你手机内所用的第三方字体；
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2010/laidiantongpeizhi.html#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-07-25T11:21:20.000Z"><a href="/2010/refresh.html">7月 25 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/refresh.html">在桌面点“刷新”？没用的！</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3>我们都有都有这样的习惯：在Windows桌面右键菜单上狂点“刷新”，总以为能加快系统的速度！！！但真的是那样吗？</h3>
-<p>先来说说“刷新”的本意。<strong>Windows XP帮助文档中的解释为“刷新用当前的数据更新显示信息”。</strong>这一功能适用于Windows的很多场合，如在Explorer中更新文件信息的显示，在浏览器中重新载入页面等等。桌面是一个特殊的文件夹，其刷新的本质仍然是更新显示信息。</p>
-<p>举例说明“<strong>刷新</strong>”的<strong>正规用途</strong>：你正在用Explorer浏览某个文件夹（当然也包括什么也不打开，就盯着桌面这个特殊的文件夹），这时如果某些后台程序（如FTP上传）在这个文件夹中生成了一些新的文件，却没有通过消息循环机制通知Explorer，你就需要手动刷新以看到新文件。再如你正在用FlashGet下载一个文件，打开它所在的文件夹，使用详细信息视图，然后多次刷新试试，你将看到该文件的大小不断增长。在更新显示信息的同时，Explorer也会按用户预设的方式重新排列图标，保持视图整齐有序。</p>
-<p>“刷新”也有一些“<strong>副业</strong>”。由于它通知Explorer进行某些初始化操作，可以使部分与Explorer有关的注册表的项设置的更改立即生效；有时Explorer出现异常，在桌面上刷新一下可能恢复；有时显卡或应用程序出现问题导致桌面上出现“色块”，也可以被刷新去除。
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2010/refresh.html#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2010-07-24T10:07:34.000Z"><a href="/2010/webpage-copy-02.html">7月 24 2010</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2010/webpage-copy-02.html">练手作品2—-Photoshop设计一款深色风格工作室网站界面</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3>又是闲来无聊，看着这款界面挺喜欢的，教程也挺详细的，马上试了下…………</h3>
-<p><a href="http://www.libiao.name/wp-content/uploads/2010/07/shense.jpg" target="_blank"></a><a href="http://lh5.ggpht.com/_YLGeaUrsp2A/THjeoGSgUII/AAAAAAAABuY/l6m0LXNbdJA/shense.jpg?imgmax=576"><img src="http://lh5.ggpht.com/_YLGeaUrsp2A/THjeoGSgUII/AAAAAAAABuY/l6m0LXNbdJA/shense.jpg?imgmax=320" alt="shense.jpg"></a></p>
-<p>个人认为难点是钢笔工具，以及英文排版，很是麻烦，还有自己对一部分基础知识不是很了解，造成了很多麻烦。</p>
-<p>教程共享地址：<a href="http://www.docin.com/p-66335449.html" title="Photoshop设计一款深色风格工作室网站界面教程" target="_blank">豆丁</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-  
-    <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2010-07-22T09:02:08.000Z"><a href="/2010/ghostxp-and-drive.html">7月 22 2010</a></time>
       
       
@@ -469,6 +167,300 @@
 
 
   
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-19T08:14:16.000Z"><a href="/2010/go2-proxy.html">7月 19 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/go2-proxy.html">翻墙利器之Go2 proxy翻墙过程全解析</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3>以前一直在用免费的vpn和在线代理，用过一段时间的“张生”，但都有诸多的不便，最近投奔到Go 2 proxy这款火狐插件来了，首先你必须你一个火狐使用者，否则你还是去用的你的在线代理吧…………</h3>
+<blockquote>
+<p>插件官网： <a href="http://go2.appspot.com" target="_blank">http://go2.appspot.com</a></p>
+<p>插件下载地址：<a href="https://addons.mozilla.org/zh-CN/firefox/addon/10815/" title="Go 2 proxy下载" target="_blank">点击下载</a></p>
+<p>此外它兼容：Firefox 1.5 - 3.7a4pre</p>
+<p>原理：Google代理终结者(<em>go2</em>-<em>proxy</em>.appspot.com)。汇集了所有<strong>google app</strong>上的免费代理。 输入网址选择代理(不选的话,系统将自动使用速度最快一个)…</p>
+</blockquote>
+<img src='/uploads/2010/07/Go-2-proxy.jpg?1386499365038' />
+
+
+<p>安装好后，不需要其他设置，即可工作，在平时未启用时，网页以正常访问形式访问，当你的某个网页无法访问时，该插件出现提示窗口，比方说我在访问:www.twitter.com
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2010/go2-proxy.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-19T01:16:11.000Z"><a href="/2010/pc-english.html">7月 19 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/pc-english.html">电脑必懂的53英文</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><span style="color: #008000;"><strong>当你把下边这53个单词记住了，你也就成了“<a href="http://www.libiao.name/pc-english.html" target="_blank">电脑高手</a>”了</strong></span></p>
+<blockquote>
+<p><span style="color: #ff0000;"><span style="color: #000000;"><strong>PC</strong></span>：</span>个人计算机Personal Computer</p>
+<p><span style="color: #000000;"><strong>CPU</strong></span>：中央处理器Central Processing Unit</p>
+<p><span style="color: #000000;"><strong>CPU Fan</strong></span>：中央处理器的“散热器”(Fan)</p>
+<p><strong>MB</strong>：主机板MotherBoard</p>
+<p><strong><span style="color: #000000;">RAM</span></strong>：内存Random Access Memory，以PC-代号划分规格，如PC-133，PC-1066，PC-2700</p>
+<p><strong>HDD</strong>：硬盘Hard Disk Drive</p>
+<p><strong>FDD</strong>：软盘Floopy Disk Drive</p>
+<p><strong>CD-ROM</strong>：光驱Compact Disk Read Only Memory</p>
+<p><strong>DVD-ROM</strong>：DVD光驱Digital Versatile Disk Read Only Memory</p>
+<p><strong>CD-RW</strong>：刻录机Compact Disk ReWriter</p>
+<p><strong>VGA</strong>：显示卡(显示卡正式用语应为Display Card)</p>
+<p><strong>AUD</strong>：声卡(声卡正式用语应为Sound Card)</p>
+<p><strong>LAN</strong>：网卡(网卡正式用语应为Network Card)</p>
+<p><strong>MODM</strong>：数据卡或调制解调器Modem</p>
+<p><strong>HUB</strong>：集线器 
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2010/pc-english.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-18T08:57:00.000Z"><a href="/2010/b2b-effect.html">7月 18 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/b2b-effect.html">国内B2B到底有没有用？</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<h2>前言：</h2>
+<p>这个暑假出来实习，找到了这份工作，但每天8个小时的上网，让我有点不知所措。实习，说来是增长见识的，但因为公司没给我安排具体工作，因自己的专业关系（电子商务）就在网络上发布了一些信息，主要是国内的B2B两个网站，阿里巴巴和慧聪网，截止到现在，发布信息已7天，期间接到四个电话，很悲哀，一个阿里巴巴客服，一个慧聪网客服，都是来介绍他们的VIP的服务，1688元大洋，直接滚蛋吧……</p>
+<p>话说昨天，突然峰回路转，当时手机正没电，电话响起时，刚接通却给我一个关机画面，不过当时我也没意识到时来了解情况的，过后，我们的销售部接到电话，此时，才知道有广东惠州的人在阿里巴巴看到了我发布的信息，来电了解详情的，心里是那个激动，否则，我都不知道我在这待下去的意义了。</p>
+<p>今天，我立马到两大网站后台更新了信息，增加了一些资料，等待中，来了一个电话，在模糊地声音中我仅仅听出了想来考察几个字，嗯，机会不容错过，最后结果是：他同意过来考察一下。<br>不管这后续事件如何发展，也许现在B2B网站很乱，而且鱼龙混杂，实话说我也只知道阿里巴巴和慧聪两大B2B网站，对不起我是电子商务的学生啦。<br>这次我总共发了四篇信息，前两篇是自己博客：</p>
+<p>第一篇：<a href="http://www.libiao.name/shuang-ding.html" target="_blank">关于暑假工作，关于双鼎</a></p>
+<p>第二篇：<a href="http://www.libiao.name/shuangding-join.html" target="_blank">广而告之，双鼎门业招代理商 </a></p>
+<p>第三篇：<a href="http://detail.china.alibaba.com/buyer/offerdetail/753301955.html" target="_blank">阿里巴巴</a></p>
+<p>第四篇：<a href="http://b2b.hc360.com/supplyself/84706604.html" target="_blank">慧聪网</a>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2010/b2b-effect.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-17T02:03:54.000Z"><a href="/2010/sugarsync-dbank.html">7月 17 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/sugarsync-dbank.html">云同步软件sugarsync与dbank的比较</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><span style="color: #339966;"><strong>现在同时停用两种同步工具，应该可以分别代表国际和国内的相应软件，在此，仅从表面数据进行下对比，别无它意，因为我对这两个都是比较满意的。</strong></span></p>
+<blockquote>
+<p><strong>sugarsync</strong></p>
+<p><a href="https://www.sugarsync.com/locale/zh/index.html" target="_blank">https://www.sugarsync.com/locale/zh/index.html</a></p>
+<p><strong>dbank</strong></p>
+<p><a href="http://www.dbank.com/" target="_blank">http://www.dbank.com/</a></p>
+<table border="0" cellspacing="0" cellpadding="0" width="559">
+
+<tbody><br><br><tr><br><br><td width="114" valign="top"></td><br><br><td width="206" valign="top">dbank</td><br><br><td width="240" valign="top">sugarsync</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">是否有客户端</td><br><br><td width="206" valign="top">有</td><br><br><td width="240" valign="top">有</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">支持外链</td><br><br><td width="206" valign="top">是</td><br><br><td width="240" valign="top">是</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">跨平台</td><br><br><td width="206" valign="top">是</td><br><br><td width="240" valign="top">是</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">中文版</td><br><br><td width="206" valign="top">有</td><br><br><td width="240" valign="top">有</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">是否支持自定义同步文件夹</td><br><br><td width="206" valign="top">不支持</td><br><br><td width="240" valign="top">支持</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">容量</td><br><br><td width="206" valign="top">3G</td><br><br><td width="240" valign="top">2G（免费用户）</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">传送是否加密</td><br><br><td width="206" valign="top">是</td><br><br><td width="240" valign="top">是（128位）</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">手机客户端</td><br><br><td width="206" valign="top">无</td><br><br><td width="240" valign="top">iPhone/黑莓/Windows   Mobile</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">相册</td><br><br><td width="206" valign="top">集成在网络硬盘</td><br><br><td width="240" valign="top">单独网络相册</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">额外功能</td><br><br><td width="206" valign="top">暂无</td><br><br><td width="240" valign="top">发送附件到邮箱存储<br><br><br>相册集成到facebook</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">扩容</td><br><br><td width="206" valign="top">暂无</td><br><br><td width="240" valign="top"><strong>邀请</strong>250M/个<strong> </strong></td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">附件大小</td><br><br><td width="206" valign="top"><strong>100M</strong></td><br><br><td width="240" valign="top"><strong>100M</strong></td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">传送速度</td><br><br><td width="206" valign="top"><strong>满足需求，看网速具体情况</strong></td><br><br><td width="240" valign="top"><strong>满足需求，看网速具体情况**</strong> **</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">评价</td><br><br><td width="206" valign="top">华为的产品，还是值得信赖，国产云同步的先锋，暂时只提供了同步功能。无其他亮点。</td><br><br><td width="240" valign="top">国外新兴同步软件巨头，并针对了中国特有国情进行了调整，产品十分优秀。</td><br><br></tr><br><br><tr><br><br><td width="114" valign="top">操作</td><br><br><td width="206" valign="top">简单</td><br><br><td width="240" valign="top">简单</td><br><br></tr><br><br></tbody>
+
+<p></table><br>如另有调整，以后再补。。。。。。</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-16T09:52:23.000Z"><a href="/2010/simpleqq.html">7月 16 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/simpleqq.html">SimpleQQ——简单而不简约</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><span style="color: #339966;"><strong>SimpleQQ 是迷你版 QQ，内核采用 WebQQ，实现了桌面化的基本功能。适用于仅仅需要 QQ  基本的聊天功能，且喜欢简洁的人士使用。Windows7 用户请使用 XP 兼容模式运行。</strong></span></p>
+<blockquote>
+<p>功能列表：</p>
+<p>1.实现了系统托盘的功能，来消息闪烁提示，点击打开聊天窗口，与原版QQ功能相近。</p>
+<p>2.实现了当聊天窗口打开时，来消息自动跳至桌面顶端，同时托盘不再闪烁提示。</p>
+<p>3.模仿了消息盒子提示，当打开消息盒子开关时，所有将会在托盘处以气泡方式提示联系人信息。</p>
+<p>4.其他功能期待你的体验，也同时期待你的建议和反馈。</p>
+</blockquote>
+<img src='/uploads/2010/07/SimpleQQ.jpg?1386499365038' />
+
+
+<p>下载地址：<a href="http://cid-b814b576058199ba.office.live.com/self.aspx/.Public/software/SimpleQQ.zip" target="_blank"><span style="color: #339966;"><strong>skydrive</strong></span></a> <span style="color: #0000ff;"> <a href="http://www.dbank.com/download.action?t=40&amp;k=NDEwMjYxNTk=&amp;pcode=LCw2OTMwNjAsNjkzMDYw&amp;rnd=4" target="_blank"><span style="color: #993300;"><strong>Dbank</strong></span> </a> <a href="http://www.dbank.com/invite/693060" target="_blank"><span style="color: #ff9900;"><strong>Dbank注册</strong></span></a></span></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-16T01:23:09.000Z"><a href="/2010/software-versions.html">7月 16 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/software-versions.html">软件版本号解析</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><span style="color: #339966;"><strong>软件名称后面经常有一些英文和数字，如：QQ 2010 Beta，这些都是软件的版本标志，通过它，我们可以对软件的类型有所了解：</strong></span></p>
+<blockquote><p><strong>Beta(β)</strong>：测试版，为正式版本推出之前发布，可能存在一定的Bug。<br><strong>Alpha(α)</strong>：内部测试版，通常在Beta之前，也存在一定的Bug。<br>=<strong>Retail</strong>：零售版。<br><strong>Free</strong>：免费版。<br><strong>Lite</strong>：精简版，也可称迷你版。<br><strong>Final</strong>：正式版，通过Alpha和Beta两个测试版本后推出的，修正了软件中存在的Bug。<br><strong>Pro</strong>：专业版，需用户获得注册码后才可以使用。<br><strong>Plus</strong>：加强版，在功能上有所提升。<br><strong>Delux</strong>：豪华版，和Plus没有太多的区别，也只是多了一些附加功能。<br><strong>Build</strong>：为内部标号，也就是同一版本可以有多个标号，如发V1.0　Build 203等，一般情况下Build后面的数字越大，其版本越新。</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-07-16T01:14:47.000Z"><a href="/2010/google-tuichu.html">7月 16 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/google-tuichu.html">关于谷歌的闲扯</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><span style="color: #008080;"><strong>Google离我们越来越远了，之前还没什么感觉，只是浏览器地址框里的.cn变成了com.hk，最近听说谷歌没有获得运营牌照，真的远了，此所谓为拖也拖死你。</strong></span></p>
+<p>今天更新了手机浏览器，UCWEB和QQ浏览器，两者的搜索选项里边都少了以前最常用的“使用Google搜索”，剩下了<span style="color: #008000;"><strong>百度、易查、搜索大全、必应</strong></span>四个。</p>
+<p>记得以前某某的一篇文章“你用了谷歌的那些业务”，我当时细数了一下，整整20个，虽然有些只是注册了，但有些却在短时间内不可能离开了，Google文档、Google日历，Gmail……</p>
+<p>仅此一记，别无他言。。。。。。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
 
   <nav id="pagination">
   
@@ -495,7 +487,7 @@
   
     <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
-    <li><a href="/categories/Web生活/">Web生活</a><small>85</small></li>
+    <li><a href="/categories/Web生活/">Web生活</a><small>82</small></li>
   
     <li><a href="/categories/mac/Web生活/">Web生活</a><small>1</small></li>
   
@@ -507,7 +499,7 @@
   
     <li><a href="/categories/移动开发/">移动开发</a><small>1</small></li>
   
-    <li><a href="/categories/设计路上/">设计路上</a><small>8</small></li>
+    <li><a href="/categories/设计路上/">设计路上</a><small>3</small></li>
   
     <li><a href="/categories/软件应用/">软件应用</a><small>30</small></li>
   
@@ -552,13 +544,13 @@
   
     <li><a href="/tags/Css3/">Css3</a><small>1</small></li>
   
-    <li><a href="/tags/DW/">DW</a><small>1</small></li>
-  
     <li><a href="/tags/Discuz/">Discuz</a><small>2</small></li>
   
     <li><a href="/tags/ERP/">ERP</a><small>1</small></li>
   
     <li><a href="/tags/EXPLORE.EXE错误/">EXPLORE.EXE错误</a><small>1</small></li>
+  
+    <li><a href="/tags/Emmet/">Emmet</a><small>1</small></li>
   
     <li><a href="/tags/FileSystem API/">FileSystem API</a><small>1</small></li>
   
@@ -612,11 +604,9 @@
   
     <li><a href="/tags/Picasa3/">Picasa3</a><small>1</small></li>
   
-    <li><a href="/tags/QQ/">QQ</a><small>5</small></li>
+    <li><a href="/tags/QQ/">QQ</a><small>6</small></li>
   
     <li><a href="/tags/QQradio网络收音机/">QQradio网络收音机</a><small>1</small></li>
-  
-    <li><a href="/tags/QQ阅读，改版/">QQ阅读，改版</a><small>1</small></li>
   
     <li><a href="/tags/S60/">S60</a><small>1</small></li>
   
@@ -635,6 +625,8 @@
     <li><a href="/tags/Weinre/">Weinre</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>4</small></li>
+  
+    <li><a href="/tags/Zen Coding/">Zen Coding</a><small>1</small></li>
   
     <li><a href="/tags/adobo flash/">adobo flash</a><small>1</small></li>
   
@@ -704,7 +696,7 @@
   
     <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
-    <li><a href="/tags/notepad/">notepad</a><small>2</small></li>
+    <li><a href="/tags/notepad/">notepad</a><small>1</small></li>
   
     <li><a href="/tags/p2p/">p2p</a><small>1</small></li>
   
@@ -714,7 +706,9 @@
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
-    <li><a href="/tags/ps/">ps</a><small>4</small></li>
+    <li><a href="/tags/ps/">ps</a><small>3</small></li>
+  
+    <li><a href="/tags/sata/">sata</a><small>1</small></li>
   
     <li><a href="/tags/simple tag 1.8/">simple tag 1.8</a><small>1</small></li>
   
@@ -732,11 +726,7 @@
   
     <li><a href="/tags/unit/">unit</a><small>1</small></li>
   
-    <li><a href="/tags/web2.0/">web2.0</a><small>1</small></li>
-  
-    <li><a href="/tags/web2.0 qq/">web2.0 qq</a><small>1</small></li>
-  
-    <li><a href="/tags/webbyps/">webbyps</a><small>2</small></li>
+    <li><a href="/tags/webbyps/">webbyps</a><small>1</small></li>
   
     <li><a href="/tags/windows/">windows</a><small>1</small></li>
   
@@ -744,7 +734,7 @@
   
     <li><a href="/tags/word 图片 大小 批量/">word 图片 大小 批量</a><small>1</small></li>
   
-    <li><a href="/tags/word，word图片，批量保存/">word，word图片，批量保存</a><small>1</small></li>
+    <li><a href="/tags/word，图片，批量保存/">word，图片，批量保存</a><small>1</small></li>
   
     <li><a href="/tags/written/">written</a><small>1</small></li>
   
@@ -752,7 +742,7 @@
   
     <li><a href="/tags/xp系统，默认字体，下载/">xp系统，默认字体，下载</a><small>1</small></li>
   
-    <li><a href="/tags/zen conding/">zen conding</a><small>3</small></li>
+    <li><a href="/tags/zen conding/">zen conding</a><small>2</small></li>
   
     <li><a href="/tags/两端对齐，li/">两端对齐，li</a><small>1</small></li>
   
@@ -760,11 +750,9 @@
   
     <li><a href="/tags/代理/">代理</a><small>1</small></li>
   
-    <li><a href="/tags/仿制/">仿制</a><small>1</small></li>
-  
     <li><a href="/tags/优化/">优化</a><small>1</small></li>
   
-    <li><a href="/tags/作品/">作品</a><small>1</small></li>
+    <li><a href="/tags/作品/">作品</a><small>2</small></li>
   
     <li><a href="/tags/使用jquery/">使用jquery</a><small>1</small></li>
   
@@ -776,7 +764,7 @@
   
     <li><a href="/tags/动易/">动易</a><small>1</small></li>
   
-    <li><a href="/tags/博客/">博客</a><small>3</small></li>
+    <li><a href="/tags/博客/">博客</a><small>1</small></li>
   
     <li><a href="/tags/印度阿三，韩国棒子，俄国老毛子，越南猴子，由来/">印度阿三，韩国棒子，俄国老毛子，越南猴子，由来</a><small>1</small></li>
   
@@ -826,17 +814,13 @@
   
     <li><a href="/tags/情书/">情书</a><small>1</small></li>
   
-    <li><a href="/tags/惠普/">惠普</a><small>2</small></li>
-  
-    <li><a href="/tags/惠普，重装，系统/">惠普，重装，系统</a><small>1</small></li>
+    <li><a href="/tags/惠普/">惠普</a><small>3</small></li>
   
     <li><a href="/tags/我的电脑打不开，我的电脑/">我的电脑打不开，我的电脑</a><small>1</small></li>
   
     <li><a href="/tags/手机/">手机</a><small>2</small></li>
   
     <li><a href="/tags/手机 充电 电池/">手机 充电 电池</a><small>1</small></li>
-  
-    <li><a href="/tags/手机数码/">手机数码</a><small>1</small></li>
   
     <li><a href="/tags/扩容/">扩容</a><small>1</small></li>
   
@@ -846,15 +830,11 @@
   
     <li><a href="/tags/教程/">教程</a><small>1</small></li>
   
-    <li><a href="/tags/教程，练手作品/">教程，练手作品</a><small>1</small></li>
-  
     <li><a href="/tags/整理/">整理</a><small>1</small></li>
   
     <li><a href="/tags/文件关联，photoshop/">文件关联，photoshop</a><small>1</small></li>
   
     <li><a href="/tags/文件，重命名/">文件，重命名</a><small>1</small></li>
-  
-    <li><a href="/tags/时尚/">时尚</a><small>1</small></li>
   
     <li><a href="/tags/最/">最</a><small>1</small></li>
   
@@ -898,17 +878,11 @@
   
     <li><a href="/tags/版本/">版本</a><small>1</small></li>
   
-    <li><a href="/tags/生活/">生活</a><small>1</small></li>
-  
     <li><a href="/tags/电脑/">电脑</a><small>1</small></li>
-  
-    <li><a href="/tags/电脑重启，桌面，我的电脑，解决方法/">电脑重启，桌面，我的电脑，解决方法</a><small>1</small></li>
   
     <li><a href="/tags/百度/">百度</a><small>1</small></li>
   
     <li><a href="/tags/破解 电子书/">破解 电子书</a><small>1</small></li>
-  
-    <li><a href="/tags/社区/">社区</a><small>1</small></li>
   
     <li><a href="/tags/移动开发/">移动开发</a><small>1</small></li>
   
@@ -918,27 +892,15 @@
   
     <li><a href="/tags/精美质感播放器/">精美质感播放器</a><small>1</small></li>
   
-    <li><a href="/tags/系统/">系统</a><small>2</small></li>
+    <li><a href="/tags/系统/">系统</a><small>4</small></li>
   
     <li><a href="/tags/系统备份和恢复，惠普/">系统备份和恢复，惠普</a><small>1</small></li>
   
-    <li><a href="/tags/练手作品/">练手作品</a><small>3</small></li>
-  
-    <li><a href="/tags/练手作品，音乐网站/">练手作品，音乐网站</a><small>1</small></li>
-  
     <li><a href="/tags/网卡未初始化/">网卡未初始化</a><small>1</small></li>
-  
-    <li><a href="/tags/网络生活/">网络生活</a><small>1</small></li>
   
     <li><a href="/tags/网络硬盘/">网络硬盘</a><small>1</small></li>
   
-    <li><a href="/tags/网页，仿制/">网页，仿制</a><small>1</small></li>
-  
-    <li><a href="/tags/网页，练手作品/">网页，练手作品</a><small>1</small></li>
-  
     <li><a href="/tags/翻墙/">翻墙</a><small>2</small></li>
-  
-    <li><a href="/tags/腾讯QQ/">腾讯QQ</a><small>1</small></li>
   
     <li><a href="/tags/英语/">英语</a><small>1</small></li>
   
@@ -960,7 +922,7 @@
   
     <li><a href="/tags/配置/">配置</a><small>2</small></li>
   
-    <li><a href="/tags/重装，系统，sata，驱动/">重装，系统，sata，驱动</a><small>1</small></li>
+    <li><a href="/tags/重启/">重启</a><small>1</small></li>
   
     <li><a href="/tags/铝合金门/">铝合金门</a><small>1</small></li>
   
@@ -968,7 +930,7 @@
   
     <li><a href="/tags/隐藏/">隐藏</a><small>1</small></li>
   
-    <li><a href="/tags/驱动/">驱动</a><small>2</small></li>
+    <li><a href="/tags/驱动/">驱动</a><small>3</small></li>
   
     <li><a href="/tags/高亮/">高亮</a><small>1</small></li>
   

@@ -125,6 +125,84 @@
 
 
   
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-05-21T03:37:12.000Z"><a href="/2010/hp_to_xp.html">5月 21 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/hp_to_xp.html">惠普重装系统小经验总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><strong>以前也给这台电脑（惠普CQ35-217tx）装过系统，这次的重装却花了我n多宝贵的时间，真是恼火……下面大概说下整个过程吧：</strong></p>
+<p><strong><span style="color: #ff0000;">第一步</strong><span style="color: #ff0000;">：<br>因为我这没有支持sata的光盘，就只好去深度论坛下了官方深度PE 4.1的，用ultraiso将硬盘映像刻录进U盘，再复制一个Ghost镜像进去，和我电脑上的ultraiso安装文件夹进去，因为我发现pe里边的ultraiso不支持虚拟光驱，这是第一步。</p>
+<p><strong><span style="color: #ff0000;">第二步</strong><span style="color: #ff0000;">：<br>第一次用U盘装系统，特意去找了教程，但跟教程中出了点点问题，硬是没装好，后来就只好自己想办：我的想法就是用在PE中用Ghost来装系统 ，首先进入PE后将第一步的映像文件和ultraiso文件夹都复制到电脑的硬盘里，并加载到虚拟光驱，在PE中找到Ghost，按照普通的Ghost来读取镜像并安装，具体可参考<strong><a href="http://www.libiao.name/hp-ghost.html" target="_blank">惠普等电脑如何使用GHOST做系统备份和恢复</a> <span style="font-weight: normal;">来操作，注意其中需要加载是的.gho文件，在先前加载的虚拟光驱里边有<span style="color: #ff0000;">两个.gho文件，选择那个ghost.gho的。至此第二步完成，系统安装中。
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2010/hp_to_xp.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2010-01-03T17:30:12.000Z"><a href="/2010/xp-sata.html">1月 4 2010</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2010/xp-sata.html">重装XP系统时安装SATA驱动的三种方法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>背景：SATA 全称是 Serial Advanced Technology Attachment（串行高级技术附件，一种基于行业标准的串行硬件驱动器接口），是由Intel、IBM、Dell、APT、Maxtor和Seagate公司共同提出的硬盘接口规范。</p>
+<img src='/uploads/2010/01/SATA.jpg?1386499365038' />
+
+
+<p>重装 xp 碰到需要安装 SATA 驱动的确是件比较麻烦的事~</p>
+<p>1. 首先需要把 BIOS =&gt; AHCI HOST CONTROLLER 这一项在安装之前设为 DISABLE（系统安装盘需要集成了 sata 驱动的）;</p>
+<p>2. 安装结束后，大家先把官网上的驱动一一安装上去，应该是在主板驱动装好后，在设备管理器中找到IDE ATA/ATAPI控制器这一项，打开后应该会显示几个控制器的菜单，找到一个后缀是2828 的控制器，然后右键选择更新驱动程序，在弹出来的对话框中，选择“从列表或指定位置安装”接下来是要选择“不要搜索，我要自己选择要安装的驱动程序”。（在此之前要去官网上把 SATA DEVICE DRIVER 这个驱动下载解压好）,在弹出的菜单中，下拉列表会看到有一个intel(r)82801HEM/HBM SATA AHCI CONTROLLER，选择他然后点击“从磁盘安装”；</p>
+<p>3. 然后就是用到刚才解压好的那个 SATA DEVICE DRIVER 中的一个名称为 iastor 的文件，选择他以后下一步安装，中间会提示“此驱动可能存在兼容风险”大家不用理会它；</p>
+<p>4. 安装好以后，系统会提示重新启动计算机，在启动前大家再检查一下刚才的那个 2828 的控制器是否更换为了intel(r)82801HEM/HBM SATA AHCI CONTROLLER，确定无误，就重新启动；</p>
+<p>5. 然后在 BIOS 中 ADVANCE 设置中把那个 AHCI HOST CONTROLLER 设置为 ENABLE 吧，这样就不会出现进入 XP 蓝屏，并且使 SATA 硬盘的性能充分的发挥了。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
 
   <nav id="pagination">
   
@@ -147,7 +225,7 @@
   
     <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
-    <li><a href="/categories/Web生活/">Web生活</a><small>85</small></li>
+    <li><a href="/categories/Web生活/">Web生活</a><small>82</small></li>
   
     <li><a href="/categories/mac/Web生活/">Web生活</a><small>1</small></li>
   
@@ -159,7 +237,7 @@
   
     <li><a href="/categories/移动开发/">移动开发</a><small>1</small></li>
   
-    <li><a href="/categories/设计路上/">设计路上</a><small>8</small></li>
+    <li><a href="/categories/设计路上/">设计路上</a><small>3</small></li>
   
     <li><a href="/categories/软件应用/">软件应用</a><small>30</small></li>
   
@@ -204,13 +282,13 @@
   
     <li><a href="/tags/Css3/">Css3</a><small>1</small></li>
   
-    <li><a href="/tags/DW/">DW</a><small>1</small></li>
-  
     <li><a href="/tags/Discuz/">Discuz</a><small>2</small></li>
   
     <li><a href="/tags/ERP/">ERP</a><small>1</small></li>
   
     <li><a href="/tags/EXPLORE.EXE错误/">EXPLORE.EXE错误</a><small>1</small></li>
+  
+    <li><a href="/tags/Emmet/">Emmet</a><small>1</small></li>
   
     <li><a href="/tags/FileSystem API/">FileSystem API</a><small>1</small></li>
   
@@ -264,11 +342,9 @@
   
     <li><a href="/tags/Picasa3/">Picasa3</a><small>1</small></li>
   
-    <li><a href="/tags/QQ/">QQ</a><small>5</small></li>
+    <li><a href="/tags/QQ/">QQ</a><small>6</small></li>
   
     <li><a href="/tags/QQradio网络收音机/">QQradio网络收音机</a><small>1</small></li>
-  
-    <li><a href="/tags/QQ阅读，改版/">QQ阅读，改版</a><small>1</small></li>
   
     <li><a href="/tags/S60/">S60</a><small>1</small></li>
   
@@ -287,6 +363,8 @@
     <li><a href="/tags/Weinre/">Weinre</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>4</small></li>
+  
+    <li><a href="/tags/Zen Coding/">Zen Coding</a><small>1</small></li>
   
     <li><a href="/tags/adobo flash/">adobo flash</a><small>1</small></li>
   
@@ -356,7 +434,7 @@
   
     <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
-    <li><a href="/tags/notepad/">notepad</a><small>2</small></li>
+    <li><a href="/tags/notepad/">notepad</a><small>1</small></li>
   
     <li><a href="/tags/p2p/">p2p</a><small>1</small></li>
   
@@ -366,7 +444,9 @@
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
-    <li><a href="/tags/ps/">ps</a><small>4</small></li>
+    <li><a href="/tags/ps/">ps</a><small>3</small></li>
+  
+    <li><a href="/tags/sata/">sata</a><small>1</small></li>
   
     <li><a href="/tags/simple tag 1.8/">simple tag 1.8</a><small>1</small></li>
   
@@ -384,11 +464,7 @@
   
     <li><a href="/tags/unit/">unit</a><small>1</small></li>
   
-    <li><a href="/tags/web2.0/">web2.0</a><small>1</small></li>
-  
-    <li><a href="/tags/web2.0 qq/">web2.0 qq</a><small>1</small></li>
-  
-    <li><a href="/tags/webbyps/">webbyps</a><small>2</small></li>
+    <li><a href="/tags/webbyps/">webbyps</a><small>1</small></li>
   
     <li><a href="/tags/windows/">windows</a><small>1</small></li>
   
@@ -396,7 +472,7 @@
   
     <li><a href="/tags/word 图片 大小 批量/">word 图片 大小 批量</a><small>1</small></li>
   
-    <li><a href="/tags/word，word图片，批量保存/">word，word图片，批量保存</a><small>1</small></li>
+    <li><a href="/tags/word，图片，批量保存/">word，图片，批量保存</a><small>1</small></li>
   
     <li><a href="/tags/written/">written</a><small>1</small></li>
   
@@ -404,7 +480,7 @@
   
     <li><a href="/tags/xp系统，默认字体，下载/">xp系统，默认字体，下载</a><small>1</small></li>
   
-    <li><a href="/tags/zen conding/">zen conding</a><small>3</small></li>
+    <li><a href="/tags/zen conding/">zen conding</a><small>2</small></li>
   
     <li><a href="/tags/两端对齐，li/">两端对齐，li</a><small>1</small></li>
   
@@ -412,11 +488,9 @@
   
     <li><a href="/tags/代理/">代理</a><small>1</small></li>
   
-    <li><a href="/tags/仿制/">仿制</a><small>1</small></li>
-  
     <li><a href="/tags/优化/">优化</a><small>1</small></li>
   
-    <li><a href="/tags/作品/">作品</a><small>1</small></li>
+    <li><a href="/tags/作品/">作品</a><small>2</small></li>
   
     <li><a href="/tags/使用jquery/">使用jquery</a><small>1</small></li>
   
@@ -428,7 +502,7 @@
   
     <li><a href="/tags/动易/">动易</a><small>1</small></li>
   
-    <li><a href="/tags/博客/">博客</a><small>3</small></li>
+    <li><a href="/tags/博客/">博客</a><small>1</small></li>
   
     <li><a href="/tags/印度阿三，韩国棒子，俄国老毛子，越南猴子，由来/">印度阿三，韩国棒子，俄国老毛子，越南猴子，由来</a><small>1</small></li>
   
@@ -478,17 +552,13 @@
   
     <li><a href="/tags/情书/">情书</a><small>1</small></li>
   
-    <li><a href="/tags/惠普/">惠普</a><small>2</small></li>
-  
-    <li><a href="/tags/惠普，重装，系统/">惠普，重装，系统</a><small>1</small></li>
+    <li><a href="/tags/惠普/">惠普</a><small>3</small></li>
   
     <li><a href="/tags/我的电脑打不开，我的电脑/">我的电脑打不开，我的电脑</a><small>1</small></li>
   
     <li><a href="/tags/手机/">手机</a><small>2</small></li>
   
     <li><a href="/tags/手机 充电 电池/">手机 充电 电池</a><small>1</small></li>
-  
-    <li><a href="/tags/手机数码/">手机数码</a><small>1</small></li>
   
     <li><a href="/tags/扩容/">扩容</a><small>1</small></li>
   
@@ -498,15 +568,11 @@
   
     <li><a href="/tags/教程/">教程</a><small>1</small></li>
   
-    <li><a href="/tags/教程，练手作品/">教程，练手作品</a><small>1</small></li>
-  
     <li><a href="/tags/整理/">整理</a><small>1</small></li>
   
     <li><a href="/tags/文件关联，photoshop/">文件关联，photoshop</a><small>1</small></li>
   
     <li><a href="/tags/文件，重命名/">文件，重命名</a><small>1</small></li>
-  
-    <li><a href="/tags/时尚/">时尚</a><small>1</small></li>
   
     <li><a href="/tags/最/">最</a><small>1</small></li>
   
@@ -550,17 +616,11 @@
   
     <li><a href="/tags/版本/">版本</a><small>1</small></li>
   
-    <li><a href="/tags/生活/">生活</a><small>1</small></li>
-  
     <li><a href="/tags/电脑/">电脑</a><small>1</small></li>
-  
-    <li><a href="/tags/电脑重启，桌面，我的电脑，解决方法/">电脑重启，桌面，我的电脑，解决方法</a><small>1</small></li>
   
     <li><a href="/tags/百度/">百度</a><small>1</small></li>
   
     <li><a href="/tags/破解 电子书/">破解 电子书</a><small>1</small></li>
-  
-    <li><a href="/tags/社区/">社区</a><small>1</small></li>
   
     <li><a href="/tags/移动开发/">移动开发</a><small>1</small></li>
   
@@ -570,27 +630,15 @@
   
     <li><a href="/tags/精美质感播放器/">精美质感播放器</a><small>1</small></li>
   
-    <li><a href="/tags/系统/">系统</a><small>2</small></li>
+    <li><a href="/tags/系统/">系统</a><small>4</small></li>
   
     <li><a href="/tags/系统备份和恢复，惠普/">系统备份和恢复，惠普</a><small>1</small></li>
   
-    <li><a href="/tags/练手作品/">练手作品</a><small>3</small></li>
-  
-    <li><a href="/tags/练手作品，音乐网站/">练手作品，音乐网站</a><small>1</small></li>
-  
     <li><a href="/tags/网卡未初始化/">网卡未初始化</a><small>1</small></li>
-  
-    <li><a href="/tags/网络生活/">网络生活</a><small>1</small></li>
   
     <li><a href="/tags/网络硬盘/">网络硬盘</a><small>1</small></li>
   
-    <li><a href="/tags/网页，仿制/">网页，仿制</a><small>1</small></li>
-  
-    <li><a href="/tags/网页，练手作品/">网页，练手作品</a><small>1</small></li>
-  
     <li><a href="/tags/翻墙/">翻墙</a><small>2</small></li>
-  
-    <li><a href="/tags/腾讯QQ/">腾讯QQ</a><small>1</small></li>
   
     <li><a href="/tags/英语/">英语</a><small>1</small></li>
   
@@ -612,7 +660,7 @@
   
     <li><a href="/tags/配置/">配置</a><small>2</small></li>
   
-    <li><a href="/tags/重装，系统，sata，驱动/">重装，系统，sata，驱动</a><small>1</small></li>
+    <li><a href="/tags/重启/">重启</a><small>1</small></li>
   
     <li><a href="/tags/铝合金门/">铝合金门</a><small>1</small></li>
   
@@ -620,7 +668,7 @@
   
     <li><a href="/tags/隐藏/">隐藏</a><small>1</small></li>
   
-    <li><a href="/tags/驱动/">驱动</a><small>2</small></li>
+    <li><a href="/tags/驱动/">驱动</a><small>3</small></li>
   
     <li><a href="/tags/高亮/">高亮</a><small>1</small></li>
   

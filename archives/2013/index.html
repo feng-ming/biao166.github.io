@@ -65,7 +65,34 @@
         <p>这主要说的是 window 下， linux 和 unix 还是您咋方便咋来。</p>
 <p>window 下关于 git 的工具是少之又少， 相对于 linux 或者 mac 下的命令行操作，甚至是 window 下的svn Gui 操作，也就只有泪奔，而无力吐槽之。（我不是命令行重度用户哈！）</p>
 <p>话说现在我用的是 <a href="http://www.cygwin.com/" target="_blank">Cygwin</a>, 常用的 merge 和 diff 极度不爽，遂借用了 Beyond compare 来帮忙，我的配置如下：</p>
-<script src="https://gist.github.com/biao166/ae6aeccd501e171bb469.js"></script>
+<figure class="highlight"><figcaption><span>[cygwin merge diff 配置]</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="special">[</span>diff<span class="special">]</span>
+    tool = bc3
+<span class="special">[</span>difftool "bc3"<span class="special">]</span>
+    path = D:/program files/beyond compare 3/bcomp.exe
+    cmd = <span class="command">\"</span>d:/program files/beyond compare 3/bcomp.exe<span class="command">\"</span> <span class="command">\"</span><span class="formula">$(cygpath -w $</span>LOCAL)<span class="command">\"</span> <span class="command">\"</span><span class="formula">$REMOTE<span class="command">\"</span>
+<span class="special">[</span>merge<span class="special">]</span>
+    tool = bc3
+<span class="special">[</span>mergetool "bc3"<span class="special">]</span>
+    path = D:/program files/beyond compare 3/bcomp.exe
+    cmd = <span class="command">\"</span>d:/program files/beyond compare 3/bcomp.exe<span class="command">\"</span> <span class="command">\"</span>$</span>LOCAL<span class="command">\"</span> <span class="command">\"</span><span class="formula">$REMOTE<span class="command">\"</span> <span class="command">\"</span>$</span>BASE<span class="command">\"</span> <span class="command">\"</span><span class="formula">$MERGED<span class="command">\"</span> <span class="command">\"</span>$</span>MERGED<span class="command">\"</span>
+    trustExitCode = true
+<span class="special">[</span>difftool<span class="special">]</span>
+    prompt = false
+</pre></td></tr></table></figure>
+
 
 <h3>注意点：</h3>
 <ul>
@@ -263,7 +290,9 @@
 <p>说起 web 调试工具，我们可以如数家珍的列出 firebug、chrome开发者工具、IE开发者工具等，这大多是桌面端的，今天我们来介绍: Weinre.</p>
 <h2>一. <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank">Weinre</a>是什么</h2>
 <p>Weinre 意思就是 Web In Spector Remote，即是一种远程 web 调试工具。我们用 Weinre 可以在电脑上即时的更改手机上对应网页的页面元素、样式表，或是查看Javascript 变量，同时还可以看到手机上页面的错误和警告信息.</p>
-<p><img src="http://www.libiao.name/wp-content/uploads/2013/05/Weinre组成结构.png" alt="Weinre组成结构"></p>
+<img src='/uploads/2013/05/Weinre组成结构.png?1386499365038' title='Weinre组成结构' />
+
+
 <blockquote>
 <p>1. 目标页面（target）：被调试的页面，页面已嵌入weinre的远程js&gt;</p>
 <p>2. Debug 客户端（client）：本地的Web Inspector调试客户端，一般为我们的 pc 浏览器；</p>
@@ -276,7 +305,10 @@
 </blockquote>
 <h2>三. 开启服务</h2>
 <p>安装完成，直接 <code>weinre -help</code> 查看帮助。</p>
-<p><img src="http://www.libiao.name/wp-content/uploads/2013/05/weinre-options.png" alt="weinre-options"><br>
+<img src='/uploads/2013/05/weinre-options.png?1386499365038' title='weinre-options' />
+
+
+<p>
       
     </div>
     <footer>
@@ -407,8 +439,11 @@
         <p>好久都没碰到过单独在IE8里出现问题的情况了…</p>
 <h3>问题描述：</h3>
 <p>链接(a)hover效果在IE8会失效，如果你用Css或Javascript设置了“filter”属性的话。</p>
-<p><a href="http://www.libiao.name/wp-content/uploads/2013/02/ie8-hover-bug.jpg" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2013/02/ie8-hover-bug.jpg" alt="ie8-hover-bug"></a></p>
-<p><a href="http://www.libiao.name/wp-content/uploads/2013/02/ie8-hover-bug2.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2013/02/ie8-hover-bug2.png" alt="ie8-hover-bug2"></a></p>
+<img src='/uploads/2013/02/ie8-hover-bug.jpg?1386499365038' />
+
+<img src='/uploads/2013/02/ie8-hover-bug2.png?1386499365038' />
+
+
 <h3>解决办法：</h3>
 <p>将链接(a)的“filter”重置为空</p>
 <blockquote>
@@ -501,7 +536,7 @@
   
     <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
-    <li><a href="/categories/Web生活/">Web生活</a><small>85</small></li>
+    <li><a href="/categories/Web生活/">Web生活</a><small>82</small></li>
   
     <li><a href="/categories/mac/Web生活/">Web生活</a><small>1</small></li>
   
@@ -513,7 +548,7 @@
   
     <li><a href="/categories/移动开发/">移动开发</a><small>1</small></li>
   
-    <li><a href="/categories/设计路上/">设计路上</a><small>8</small></li>
+    <li><a href="/categories/设计路上/">设计路上</a><small>3</small></li>
   
     <li><a href="/categories/软件应用/">软件应用</a><small>30</small></li>
   
@@ -558,13 +593,13 @@
   
     <li><a href="/tags/Css3/">Css3</a><small>1</small></li>
   
-    <li><a href="/tags/DW/">DW</a><small>1</small></li>
-  
     <li><a href="/tags/Discuz/">Discuz</a><small>2</small></li>
   
     <li><a href="/tags/ERP/">ERP</a><small>1</small></li>
   
     <li><a href="/tags/EXPLORE.EXE错误/">EXPLORE.EXE错误</a><small>1</small></li>
+  
+    <li><a href="/tags/Emmet/">Emmet</a><small>1</small></li>
   
     <li><a href="/tags/FileSystem API/">FileSystem API</a><small>1</small></li>
   
@@ -618,11 +653,9 @@
   
     <li><a href="/tags/Picasa3/">Picasa3</a><small>1</small></li>
   
-    <li><a href="/tags/QQ/">QQ</a><small>5</small></li>
+    <li><a href="/tags/QQ/">QQ</a><small>6</small></li>
   
     <li><a href="/tags/QQradio网络收音机/">QQradio网络收音机</a><small>1</small></li>
-  
-    <li><a href="/tags/QQ阅读，改版/">QQ阅读，改版</a><small>1</small></li>
   
     <li><a href="/tags/S60/">S60</a><small>1</small></li>
   
@@ -641,6 +674,8 @@
     <li><a href="/tags/Weinre/">Weinre</a><small>1</small></li>
   
     <li><a href="/tags/WordPress/">WordPress</a><small>4</small></li>
+  
+    <li><a href="/tags/Zen Coding/">Zen Coding</a><small>1</small></li>
   
     <li><a href="/tags/adobo flash/">adobo flash</a><small>1</small></li>
   
@@ -710,7 +745,7 @@
   
     <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
   
-    <li><a href="/tags/notepad/">notepad</a><small>2</small></li>
+    <li><a href="/tags/notepad/">notepad</a><small>1</small></li>
   
     <li><a href="/tags/p2p/">p2p</a><small>1</small></li>
   
@@ -720,7 +755,9 @@
   
     <li><a href="/tags/php/">php</a><small>1</small></li>
   
-    <li><a href="/tags/ps/">ps</a><small>4</small></li>
+    <li><a href="/tags/ps/">ps</a><small>3</small></li>
+  
+    <li><a href="/tags/sata/">sata</a><small>1</small></li>
   
     <li><a href="/tags/simple tag 1.8/">simple tag 1.8</a><small>1</small></li>
   
@@ -738,11 +775,7 @@
   
     <li><a href="/tags/unit/">unit</a><small>1</small></li>
   
-    <li><a href="/tags/web2.0/">web2.0</a><small>1</small></li>
-  
-    <li><a href="/tags/web2.0 qq/">web2.0 qq</a><small>1</small></li>
-  
-    <li><a href="/tags/webbyps/">webbyps</a><small>2</small></li>
+    <li><a href="/tags/webbyps/">webbyps</a><small>1</small></li>
   
     <li><a href="/tags/windows/">windows</a><small>1</small></li>
   
@@ -750,7 +783,7 @@
   
     <li><a href="/tags/word 图片 大小 批量/">word 图片 大小 批量</a><small>1</small></li>
   
-    <li><a href="/tags/word，word图片，批量保存/">word，word图片，批量保存</a><small>1</small></li>
+    <li><a href="/tags/word，图片，批量保存/">word，图片，批量保存</a><small>1</small></li>
   
     <li><a href="/tags/written/">written</a><small>1</small></li>
   
@@ -758,7 +791,7 @@
   
     <li><a href="/tags/xp系统，默认字体，下载/">xp系统，默认字体，下载</a><small>1</small></li>
   
-    <li><a href="/tags/zen conding/">zen conding</a><small>3</small></li>
+    <li><a href="/tags/zen conding/">zen conding</a><small>2</small></li>
   
     <li><a href="/tags/两端对齐，li/">两端对齐，li</a><small>1</small></li>
   
@@ -766,11 +799,9 @@
   
     <li><a href="/tags/代理/">代理</a><small>1</small></li>
   
-    <li><a href="/tags/仿制/">仿制</a><small>1</small></li>
-  
     <li><a href="/tags/优化/">优化</a><small>1</small></li>
   
-    <li><a href="/tags/作品/">作品</a><small>1</small></li>
+    <li><a href="/tags/作品/">作品</a><small>2</small></li>
   
     <li><a href="/tags/使用jquery/">使用jquery</a><small>1</small></li>
   
@@ -782,7 +813,7 @@
   
     <li><a href="/tags/动易/">动易</a><small>1</small></li>
   
-    <li><a href="/tags/博客/">博客</a><small>3</small></li>
+    <li><a href="/tags/博客/">博客</a><small>1</small></li>
   
     <li><a href="/tags/印度阿三，韩国棒子，俄国老毛子，越南猴子，由来/">印度阿三，韩国棒子，俄国老毛子，越南猴子，由来</a><small>1</small></li>
   
@@ -832,17 +863,13 @@
   
     <li><a href="/tags/情书/">情书</a><small>1</small></li>
   
-    <li><a href="/tags/惠普/">惠普</a><small>2</small></li>
-  
-    <li><a href="/tags/惠普，重装，系统/">惠普，重装，系统</a><small>1</small></li>
+    <li><a href="/tags/惠普/">惠普</a><small>3</small></li>
   
     <li><a href="/tags/我的电脑打不开，我的电脑/">我的电脑打不开，我的电脑</a><small>1</small></li>
   
     <li><a href="/tags/手机/">手机</a><small>2</small></li>
   
     <li><a href="/tags/手机 充电 电池/">手机 充电 电池</a><small>1</small></li>
-  
-    <li><a href="/tags/手机数码/">手机数码</a><small>1</small></li>
   
     <li><a href="/tags/扩容/">扩容</a><small>1</small></li>
   
@@ -852,15 +879,11 @@
   
     <li><a href="/tags/教程/">教程</a><small>1</small></li>
   
-    <li><a href="/tags/教程，练手作品/">教程，练手作品</a><small>1</small></li>
-  
     <li><a href="/tags/整理/">整理</a><small>1</small></li>
   
     <li><a href="/tags/文件关联，photoshop/">文件关联，photoshop</a><small>1</small></li>
   
     <li><a href="/tags/文件，重命名/">文件，重命名</a><small>1</small></li>
-  
-    <li><a href="/tags/时尚/">时尚</a><small>1</small></li>
   
     <li><a href="/tags/最/">最</a><small>1</small></li>
   
@@ -904,17 +927,11 @@
   
     <li><a href="/tags/版本/">版本</a><small>1</small></li>
   
-    <li><a href="/tags/生活/">生活</a><small>1</small></li>
-  
     <li><a href="/tags/电脑/">电脑</a><small>1</small></li>
-  
-    <li><a href="/tags/电脑重启，桌面，我的电脑，解决方法/">电脑重启，桌面，我的电脑，解决方法</a><small>1</small></li>
   
     <li><a href="/tags/百度/">百度</a><small>1</small></li>
   
     <li><a href="/tags/破解 电子书/">破解 电子书</a><small>1</small></li>
-  
-    <li><a href="/tags/社区/">社区</a><small>1</small></li>
   
     <li><a href="/tags/移动开发/">移动开发</a><small>1</small></li>
   
@@ -924,27 +941,15 @@
   
     <li><a href="/tags/精美质感播放器/">精美质感播放器</a><small>1</small></li>
   
-    <li><a href="/tags/系统/">系统</a><small>2</small></li>
+    <li><a href="/tags/系统/">系统</a><small>4</small></li>
   
     <li><a href="/tags/系统备份和恢复，惠普/">系统备份和恢复，惠普</a><small>1</small></li>
   
-    <li><a href="/tags/练手作品/">练手作品</a><small>3</small></li>
-  
-    <li><a href="/tags/练手作品，音乐网站/">练手作品，音乐网站</a><small>1</small></li>
-  
     <li><a href="/tags/网卡未初始化/">网卡未初始化</a><small>1</small></li>
-  
-    <li><a href="/tags/网络生活/">网络生活</a><small>1</small></li>
   
     <li><a href="/tags/网络硬盘/">网络硬盘</a><small>1</small></li>
   
-    <li><a href="/tags/网页，仿制/">网页，仿制</a><small>1</small></li>
-  
-    <li><a href="/tags/网页，练手作品/">网页，练手作品</a><small>1</small></li>
-  
     <li><a href="/tags/翻墙/">翻墙</a><small>2</small></li>
-  
-    <li><a href="/tags/腾讯QQ/">腾讯QQ</a><small>1</small></li>
   
     <li><a href="/tags/英语/">英语</a><small>1</small></li>
   
@@ -966,7 +971,7 @@
   
     <li><a href="/tags/配置/">配置</a><small>2</small></li>
   
-    <li><a href="/tags/重装，系统，sata，驱动/">重装，系统，sata，驱动</a><small>1</small></li>
+    <li><a href="/tags/重启/">重启</a><small>1</small></li>
   
     <li><a href="/tags/铝合金门/">铝合金门</a><small>1</small></li>
   
@@ -974,7 +979,7 @@
   
     <li><a href="/tags/隐藏/">隐藏</a><small>1</small></li>
   
-    <li><a href="/tags/驱动/">驱动</a><small>2</small></li>
+    <li><a href="/tags/驱动/">驱动</a><small>3</small></li>
   
     <li><a href="/tags/高亮/">高亮</a><small>1</small></li>
   

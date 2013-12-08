@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[LiBiao's Blog]]></title>
+  <subtitle><![CDATA[奔跑于泥地中为梦想]]></subtitle>
+  <link href="http://libiao.name/atom.xml" rel="self"/>
+  <link href="http://libiao.name"/>
+  <updated>2013-12-08T10:42:47.692Z</updated>
+  <id>http://libiao.name/</id>
+  <author>
+    <name><![CDATA[biao166]]></name>
+    <email><![CDATA[biao166@gmail.com]]></email>
+  </author>
+  <generator uri="http://zespia.tw/hexo">Hexo</generator>
+  <entry>
+    <title type="html"><![CDATA[调用 Beyond compare 为 git 实现 diff 及 merge]]></title>
+    <link href="http://libiao.name/2013/beyond-compare-git.html"/>
+    <id>http://libiao.name/2013/beyond-compare-git.html</id>
+    <published>2013-08-05T13:43:07.000Z</published>
+    <updated>2013-12-07T19:49:33.000Z</updated>
+    <content type="html"><![CDATA[<p>这主要说的是 window 下， linux 和 unix 还是您咋方便咋来。</p>
+<p>window 下关于 git 的工具是少之又少， 相对于 linux 或者 mac 下的命令行操作，甚至是 window 下的svn Gui 操作，也就只有泪奔，而无力吐槽之。（我不是命令行重度用户哈！）</p>
+<p>话说现在我用的是 <a href="http://www.cygwin.com/" target="_blank">Cygwin</a>, 常用的 merge 和 diff 极度不爽，遂借用了 Beyond compare 来帮忙，我的配置如下：</p>
+<figure class="highlight"><figcaption><span>[cygwin merge diff 配置]</span></figcaption><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="special">[</span>diff<span class="special">]</span>
+    tool = bc3
+<span class="special">[</span>difftool "bc3"<span class="special">]</span>
+    path = D:/program files/beyond compare 3/bcomp.exe
+    cmd = <span class="command">\"</span>d:/program files/beyond compare 3/bcomp.exe<span class="command">\"</span> <span class="command">\"</span><span class="formula">$(cygpath -w $</span>LOCAL)<span class="command">\"</span> <span class="command">\"</span><span class="formula">$REMOTE<span class="command">\"</span>
+<span class="special">[</span>merge<span class="special">]</span>
+    tool = bc3
+<span class="special">[</span>mergetool "bc3"<span class="special">]</span>
+    path = D:/program files/beyond compare 3/bcomp.exe
+    cmd = <span class="command">\"</span>d:/program files/beyond compare 3/bcomp.exe<span class="command">\"</span> <span class="command">\"</span>$</span>LOCAL<span class="command">\"</span> <span class="command">\"</span><span class="formula">$REMOTE<span class="command">\"</span> <span class="command">\"</span>$</span>BASE<span class="command">\"</span> <span class="command">\"</span><span class="formula">$MERGED<span class="command">\"</span> <span class="command">\"</span>$</span>MERGED<span class="command">\"</span>
+    trustExitCode = true
+<span class="special">[</span>difftool<span class="special">]</span>
+    prompt = false
+</pre></td></tr></table></figure>
+
+
+<h3>注意点：</h3>
+<ul>
+<li>你只要复制 [diff]、[difftool “bc3”]、[merge]、[mergetool “bc3”]、[difftool]这几个配置</li>
+<li>Beyond compare 路径自己对照，注意不是 beyond compare.exe, 而是 bcomp.exe，我的系统是 window 8</li>
+<li>git的配置文件一般在 User/用户名/， 如果使用的是 Cygwin，那就是 /home/用户名/.gitconfig</li>
+</ul>
+]]></content>
+    <category scheme="http://libiao.name/tags/Beyond compare/" term="Beyond compare"/>
+    <category scheme="http://libiao.name/tags/git/" term="git"/>
+    <category scheme="http://libiao.name/categories/开发工具/" term="开发工具"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Phonegap中实现从网络下载文件]]></title>
+    <link href="http://libiao.name/2013/phonegap-download-apk.html"/>
+    <id>http://libiao.name/2013/phonegap-download-apk.html</id>
+    <published>2013-07-24T16:35:04.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>七彩坊安卓版启动两个月了，前些天 Phonegap 都出3.0了，想当初启动项目的时候这货还是 2.6,不过话说 Adobo 收购后向着越来越规范走，但每个版本都还有 N 顿的 bug 没修复…可以狠狠的吐槽一番。</p>
+<p>最近折腾了下 Phonegap 下的文件下载，具体就是使用 LocalFileSystem 得到一个 fileSystem，再通过 fileSystem.root.getFile 的方法得到下载路径和地址， 再 new 一个 FileTransfer，从而从网络上下载我们想要的文件，这次我想要实现的是在应用内升级版本，并打开安装…</p>
+<script src="https://gist.github.com/biao166/6072103.js"></script>
+
+<h3>参考文档</h3>
+<ul>
+<li>探索 FileSystem API：<a href="http://www.html5rocks.com/zh/tutorials/file/filesystem/" title="探索 FileSystem API" target="_blank"><a href="http://www.html5rocks.com/zh/tutorials/file/filesystem/">http://www.html5rocks.com/zh/tutorials/file/filesystem/</a></a> (需翻墙)</li>
+</ul>
+<p>= = = = = = = = = = = 后记 - 2013/08/02 = = = = = = = = =  = = =</p>
+<p>由于下载文件比较特殊，需要考虑本地的存储和可读写（比方说 sdcard 是否存在、是否可写、是否空间足够），由于七彩坊不是原生应用，故省去了这些检测。但还是可以了解下上文中 LocalFileSystem.PERSISTENT 为何物？</p>
+<p>phonegap 给的解释是:</p>
+<blockquote>
+<p>Used for storage that should not be removed by the user agent without application or user permission.</p>
+</blockquote>
+<p>而我们在 stackoverflow 找到了更具体的解释 <a href="http://stackoverflow.com/questions/16399465/where-does-localfilesystem-persistent-point-to" target="_blank">Where does LocalFileSystem.PERSISTENT point to?</a></p>
+]]></content>
+    <category scheme="http://libiao.name/tags/FileSystem API/" term="FileSystem API"/>
+    <category scheme="http://libiao.name/tags/html5/" term="html5"/>
+    <category scheme="http://libiao.name/tags/phonegap/" term="phonegap"/>
+    <category scheme="http://libiao.name/categories/移动开发/" term="移动开发"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Backbone 之我见]]></title>
+    <link href="http://libiao.name/2013/backbone-my-opinions.html"/>
+    <id>http://libiao.name/2013/backbone-my-opinions.html</id>
+    <published>2013-07-08T17:11:12.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<h2>Backbone 之我见</h2>
+<p>无聊而感，web端的应用越发精彩，前端已经变得越来越不前端了，加之最近玩 backbone，觉得挺有意思的，故苦逼的我先吐槽一翻方知为快。</p>
+<p>首先说明，本文无实例，纯吐槽。</p>
+<h3>背景</h3>
+<p>接触三个月，之前完成小项目两个，只应用了Router 模块，另一项目《七彩坊Android》正在进行中，正式版即将登场，可谓前后左右上下全方面围着 backbone 转悠。</p>
+<h3>优点</h3>
+<ul>
+<li>轻量，唯一依赖 underscore.js , 可选类 jquery 库</li>
+<li>模块化清晰，覆盖了几乎所有的基础功能，同时灵活性很强。</li>
+<li>文档完备，example 经典, 看懂之后几乎就可以灵活运用。</li>
+<li>事件机制对用惯了 jquery 的 前端来说毫无压力。</li>
+<li>REST 形式的数据同步是优点也是缺点，好在 parse 函数弥补之。</li>
+</ul>
+<h3>缺点</h3>
+<ul>
+<li>无多对多，即 多 Modul 对 多 Collection ，自己实现挺纠结，有时间详述。</li>
+</ul>
+<h3>注意点</h3>
+<ul>
+<li>活用 parse 对后端返回的数据进行处理。</li>
+<li>最好是 一个 Model 或 Collection 对应一个 View。</li>
+<li>可以对接口进行覆盖来实现需求，例：七彩坊中对 Backbone.sync 进行了覆盖，以适应非 REST 形式后台数据的交互。</li>
+<li>事件除绑定外还要记得解除，否则后果很严重。</li>
+</ul>
+]]></content>
+    <category scheme="http://libiao.name/categories/Javascript/" term="Javascript"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Css3 之长度单位参考]]></title>
+    <link href="http://libiao.name/2013/css3-length-units.html"/>
+    <id>http://libiao.name/2013/css3-length-units.html</id>
+    <published>2013-05-05T07:01:38.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>在样式表里边，我们最常看到的是 px、%、em 这三个单位，还有可能用到的是 pt ,其他的都几乎很少用到，如 in、cm、mm 等。</p>
+<h3>我们先来搞清楚 px 和 pt 的区别？</h3>
+<p>px就是表示pixel，像素，是屏幕上显示数据的最基本的点；pt就是point，是印刷行业常用单位，等于1/72英寸。</p>
+<p>这样很明白，px是一个点，它不是自然界的长度单位，谁能说出一个“点”有多长多大么？可以画的很小，也可以很大。如果点很小，那画面就清晰，我们称它为“分辨率高”，反之，就是“分辨率低”。所以，“点”的大小是会“变”的，也称为“相对长度”。pt全称为point，但中文不叫“点”，确切的说法是一个专用的印刷单位 “磅”，大小为1/72英寸。所以它是一个自然界标准的长度单位，也称为“绝对长度”。因此就有这样的说法，pixel是相对大小，而point是绝对大小。</p>
+<h3>Css3 新单位</h3>
+<p><img src="http://www.libiao.name/wp-content/uploads/2013/05/Css3-units.png" alt="Css3-units"></p>
+<p>Css3 中引入了一些新的单位（<a href="http://dev.w3.org/csswg/css-values/#length-value" target="_blank">数据来源</a>）：</p>
+<p>显然 vw、vh、vmin、vmax 是针对移动设备的，会随着视窗的大小而变化,暂且不提；而我所感兴趣的是 <code>rem</code> 这个单位，先看下它的 support（数据来源 <a href="http://caniuse.com/" target="_blank"><a href="http://caniuse.com/">http://caniuse.com/</a></a>）。</p>
+<p><img src="http://www.libiao.name/wp-content/uploads/2013/05/rem-supported.png" alt="rem-supported"></p>
+<p>不错，IE9+，Firefox、Chrome、Safari、Opera 的主流版本都已经支持，而我们也知道 根元素 html 的值在各个浏览器里边都是出奇的统一（16px）,这也就意味着我们可以肆意的使用 <code>rem</code> ,尤其是在移动端。</p>
+<p>延伸扩展：Css 中单位真的只有这些么？ 注意我标题为[长度单位]，隆重请出其他单位：</p>
+<blockquote>
+<p><strong>deg</strong>：Degrees. There are 360 degrees in a full circle.</p>
+<p><strong>grad</strong>：Gradians, also known as “gons” or “grades”. There are 400 gradians in a full circle.</p>
+<p><strong>rad</strong>：Radians. There are 2π radians in a full circle.</p>
+<p><strong>turn</strong>：Turns. There is 1 turn in a full circle.</p>
+<p><strong>s</strong>：Seconds.</p>
+<p><strong>ms</strong>：Milliseconds. There are 1000 milliseconds in a second.</p>
+<p><strong>dpi</strong>：dots per inch</p>
+<p>……</p>
+<p>// 你认识其中几个呢？</p>
+</blockquote>
+]]></content>
+    <category scheme="http://libiao.name/tags/Css3/" term="Css3"/>
+    <category scheme="http://libiao.name/tags/unit/" term="unit"/>
+    <category scheme="http://libiao.name/categories/前端开发/" term="前端开发"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[移动开发调试篇之 Weinre]]></title>
+    <link href="http://libiao.name/2013/weinre-induction.html"/>
+    <id>http://libiao.name/2013/weinre-induction.html</id>
+    <published>2013-05-04T11:10:27.000Z</published>
+    <updated>2013-12-08T08:52:06.000Z</updated>
+    <content type="html"><![CDATA[<p>在智能手机和平板电脑越来越流行的时代，我们在移动平台上的调试工具却一直处于贫血时代；调试方法还停留在只能使用 alert 弹出对话框，检查 DOM 或者 CSS 的状态是非常困难的，甚至是不可能完成的任务。</p>
+<p>当然这只是一个停留，我们的开发者发挥自己的想象，开发出了各种各样有趣的工具，我们的浏览器厂商也在积极改进这种情况，相信移动端远程调试的时代即将到来。这些变通方案和未来的移动调试支持有一个共同点：它们是远程工作，调试不会真正发生在移动设备上，而是在其他机器上通过网络连接了一个调试的GUI。</p>
+<p>说起 web 调试工具，我们可以如数家珍的列出 firebug、chrome开发者工具、IE开发者工具等，这大多是桌面端的，今天我们来介绍: Weinre.</p>
+<h2>一. <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank">Weinre</a>是什么</h2>
+<p>Weinre 意思就是 Web In Spector Remote，即是一种远程 web 调试工具。我们用 Weinre 可以在电脑上即时的更改手机上对应网页的页面元素、样式表，或是查看Javascript 变量，同时还可以看到手机上页面的错误和警告信息.</p>
+<img src='/uploads/2013/05/Weinre组成结构.png?1386499365038' title='Weinre组成结构' />
+
+
+<blockquote>
+<p>1. 目标页面（target）：被调试的页面，页面已嵌入weinre的远程js&gt;</p>
+<p>2. Debug 客户端（client）：本地的Web Inspector调试客户端，一般为我们的 pc 浏览器；</p>
+<p>3. Debug 服务端（agent）：一个HTTP Server，为目标页面与Debug客户端建立通信，一般为 node 服务。</p>
+</blockquote>
+<h2>二. 安装Weinre</h2>
+<p>之前的 <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank">Weinre</a> 是跑在 java 下面，后来随着 node 的兴起，我们可以直接在 npm 里边直接安装，并运行之。</p>
+<blockquote>
+<p>sudo npm -g install weinre</p>
+</blockquote>
+<h2>三. 开启服务</h2>
+<p>安装完成，直接 <code>weinre -help</code> 查看帮助。</p>
+<img src='/uploads/2013/05/weinre-options.png?1386499365038' title='weinre-options' />
+
+
+<p><a id="more"></a></p>
+<div class="highlight"><pre><span class="c1">//eg</span><br><span class="nx">weinre</span> <span class="o">—</span><span class="nx">boundHost</span> <span class="mf">192.168</span><span class="p">.</span><span class="mf">1.14</span><br></pre></div>
+
+<p>这样就开启了 192.168.1.14 这台机器上的 weinre 服务， 默认端口是 8080</p>
+<p>访问 <cite>192.168.1.14:8080</cite>（需在 webkit 内核浏览器内）界面如下</p>
+<img inspector='' remote&quot;='' src='/uploads/2013/05/web-inspector-remote.png?1386499365038' title='web' />
+
+
+<p>将 <code>http://192.168.1.14:8080/target/target-script-min.js#anonymous</code> 插入到目标调试页面。</p>
+<p>按照提示访问 <cite><a href="http://192.168.1.14:8080/client/#anonymous" target="_blank">http://192.168.1.14:8080/client/#anonymous</a></cite>, 界面如下</p>
+<img src='/uploads/2013/05/weinre界面.png?1386499365038' title='weinre界面' />
+
+
+<p>其中包含了 weinre 服务的基本状况， Elements、Resources、Network、Timeline、Console几个 tab 界面，活生生一个 Chrome 开发者工具界面，如何操作这就不必说了吧。试用几天之后感觉不错，唯一的遗憾就是不能直接 Js调试。</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/Weinre/" term="Weinre"/>
+    <category scheme="http://libiao.name/tags/移动开发/" term="移动开发"/>
+    <category scheme="http://libiao.name/categories/开发工具/" term="开发工具"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Grunt 入门]]></title>
+    <link href="http://libiao.name/2013/gruntjs-introduction.html"/>
+    <id>http://libiao.name/2013/gruntjs-introduction.html</id>
+    <published>2013-04-15T15:10:15.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<h3>前言：<a href="http://gruntjs.com/" title="Grunt" target="_blank">Grunt</a> 为何物？</h3>
+<p>官方介绍：The JavaScript Task Runner</p>
+<h3>安装 node</h3>
+<p>安装 <a href="http://www.nodejs.org/" title="node" target="_blank">node</a>，安装好后运行 <code>node -v</code> 测试</p>
+<h3>安装 npm</h3>
+<p>安装 npm，通常已默认安装</p>
+<h3>安装 grunt</h3>
+<p>命令 <code>npm install -g grunt</code> 安装好后运行 <code>grunt -h</code> 或者 <code>grunt -version</code> 测试</p>
+<h3>安装 grunt 命令行工具</h3>
+<p>安装 grunt 命令行工具: <code>npm install -g grunt-cli</code></p>
+<h3>配置新项目</h3>
+<p>Grunt依赖两个配置文件 package.json 和 Gruntfile.js。package.json：存储配置信息，Grunt plugins的 devDependencies 也存储在内。Gruntfile.js：定义 tasks 和 load Grunt plugins</p>
+<p>配置 package.json：</p>
+<p>首先在终端进入项目文件夹，运行 <code>npm init</code> 创建基础的 package.json 包含 “name”,“version”等信息，你也可以添加 devDependencies列表到里面。</p>
+<p><a id="more"></a></p>
+<div class="highlight"><pre><span class="p">{</span><br>  <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;my-project-name&quot;</span><span class="p">,</span><br>  <span class="s2">&quot;version&quot;</span><span class="o">:</span> <span class="s2">&quot;0.1.0&quot;</span><span class="p">,</span><br>  <span class="s2">&quot;devDependencies&quot;</span><span class="o">:</span> <span class="p">{</span><br>    <span class="s2">&quot;grunt&quot;</span><span class="o">:</span> <span class="s2">&quot;~0.4.1&quot;</span><span class="p">,</span><br>    <span class="s2">&quot;grunt-contrib-jshint&quot;</span><span class="o">:</span> <span class="s2">&quot;~0.1.1&quot;</span><span class="p">,</span><br>    <span class="s2">&quot;grunt-contrib-nodeunit&quot;</span><span class="o">:</span> <span class="s2">&quot;~0.1.2&quot;</span><br>  <span class="p">}</span><br><span class="p">}</span><br></pre></div>
+
+<p>安装 grunt 默认插件</p>
+<p><code>npm install grunt --save-dev</code></p>
+<p>安装其他 grunt 插件</p>
+<div class="highlight"><pre><span class="nx">npm</span> <span class="nb">install</span> <span class="o">&lt;</span><span class="nx">module</span><span class="o">&gt;</span> <span class="o">—</span><span class="nb">save</span><span class="na">-dev</span><br><span class="nx">npm</span> <span class="nb">install</span> <span class="o">&lt;</span><span class="nx">module</span><span class="o">&gt;</span><br><span class="c1">//eg</span><br><span class="nx">npm</span> <span class="nb">install</span> <span class="nx">grunt</span><span class="na">-contrib-stylus</span> <span class="o">—</span><span class="nb">save</span><span class="na">-dev</span><br><span class="nx">npm</span> <span class="nb">install</span> <span class="nx">grunt</span><span class="na">-contrib-uglify</span><br></pre></div>
+
+<p>你可以通过 devDependencies 查看 module 列表</p>
+<p>配置Gruntfile.js（遵循 CommonJs 语法，包含在 module.exports内）</p>
+<div class="highlight"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">grunt</span><span class="p">)</span> <span class="p">{</span><br>  <span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span><br>    <span class="nx">pkg</span><span class="o">:</span> <span class="nx">grunt</span><span class="p">.</span><span class="nx">file</span><span class="p">.</span><span class="nx">readJSON</span><span class="p">(</span><span class="s1">&#39;package.json&#39;</span><span class="p">),</span><br>    <span class="nx">stylus</span><span class="o">:</span> <span class="p">{</span><br>      <span class="nx">compile</span><span class="o">:</span> <span class="p">{</span><br>        <span class="nx">files</span><span class="o">:</span> <span class="p">{</span><br>          <span class="s1">&#39;src/test.css&#39;</span><span class="o">:</span> <span class="s1">&#39;src/test.styl&#39;</span><br>        <span class="p">}</span><br>      <span class="p">}</span><br>    <span class="p">},</span><br>    <span class="nx">watch</span><span class="o">:</span> <span class="p">{</span><br>      <span class="nx">scripts</span><span class="o">:</span> <span class="p">{</span><br>        <span class="nx">files</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;src/test.styl&#39;</span><span class="p">],</span><br>        <span class="nx">tasks</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;stylus&#39;</span><span class="p">]</span><br>      <span class="p">}</span><br>    <span class="p">}</span><br>  <span class="p">});</span><br>  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-stylus&#39;</span><span class="p">);</span><br>  <span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">&#39;grunt-contrib-watch&#39;</span><span class="p">);</span><br>  <span class="nx">grunt</span><span class="p">.</span><span class="nx">registerTask</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;stylus&#39;</span><span class="p">]);</span><br><span class="p">};</span><br></pre></div>
+
+<h3>启动项目</h3>
+<ul>
+<li>运行 <code>npm install</code> 来安装依赖包（如果你的 devDependencies 列表还有未安装的plugin）</li>
+<li>运行 <code>Grunt</code> 启动默认任务，或者 <code>Grunt watch</code> 启动 watch 任务</li>
+</ul>
+<h3>我碰到的问题：</h3>
+<ol>
+<li><p>grunt的qunit test还依赖phantomjs，phantomjs是基于Javascript驱动的命令行webkit引擎，轻量级，安装简单，开发快速，渲染速度 较快，无界面的webkit浏览器。由于phantomjs无法通过npm自动安装，所以需要自己下载phantomjs。</p>
+</li>
+<li><p>使用 mincss 碰到问题如下：<code>Warning: Object #&lt;object&gt; has no method &#39;expandFiles&#39;&lt;/object&gt;</code> 暂无法解决，放弃之，用 cssmin 代替。</p>
+</li>
+</ol>
+]]></content>
+    <category scheme="http://libiao.name/tags/Grunt/" term="Grunt"/>
+    <category scheme="http://libiao.name/tags/js/" term="js"/>
+    <category scheme="http://libiao.name/tags/开发工具/" term="开发工具"/>
+    <category scheme="http://libiao.name/categories/开发工具/" term="开发工具"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[SublimeHighlight 实现博客代码高亮]]></title>
+    <link href="http://libiao.name/2013/copy-as-highlight-by-html.html"/>
+    <id>http://libiao.name/2013/copy-as-highlight-by-html.html</id>
+    <published>2013-04-04T17:07:25.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>最终效果预览</p>
+<div class="highlight"><pre><span class="nt">blockquote</span><span class="o">,</span> <span class="nt">q</span> <span class="p">{</span><span class="k">quotes</span><span class="o">:</span> <span class="k">none</span><span class="p">;}</span><br><span class="nt">blockquote</span><span class="nd">:before</span><span class="o">,</span><br><span class="nt">blockquote</span><span class="nd">:after</span><span class="o">,</span><br><span class="nt">q</span><span class="nd">:before</span><span class="o">,</span><br><span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span><span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="k">content</span><span class="o">:</span> <span class="k">none</span><span class="p">;}</span><br></pre></div>
+
+<p><strong>前言</strong>：对于一段没有高亮和缩进的代码，我相信你是没有兴趣去仔细研读的，同样在我们的技术博文中，经常需要插入各种code，你会选择何种方式？</p>
+<p>比如在 wordpress 中，常用的高亮插件有 SyntaxHighlighter、Syntax Highlighter、Google Syntax Highlighter for WordPress 等等，也有不借助插件比如 code2html，CodeRenderUnmi、代码发芽网等等。</p>
+<p><img src="http://www.libiao.name/wp-content/uploads/2013/04/SyntaxHighlighter-Evolved.png" alt="SyntaxHighlighter Evolved"></p>
+<p>使用高亮插件的不足是会载入一大段 css 和 js 文件，且只有有限的主题，样式控制不方便，当然不适用插件的话更需要每次都需要打开在线网站或者软件。有没有一个既不需要借助上面的工具，而又能提供有效定制的方法呢？</p>
+<p>在 sublime text 编辑器的众多插件中我找到了 <a href="https://github.com/n1k0/SublimeHighlight/" title="SublimeHighlight" target="_blank"><strong>SublimeHighlight</strong></a> 这个插件，应该可以解决掉上面提出的问题.</p>
+<p>首先你需要安装 SublimeHighlight 插件，在 install package list 中是没有这个插件的，你可以选择 add Repository ,将 “<a href="https://github.com/n1k0/SublimeHighlight”添加进去，然后在" target="_blank">https://github.com/n1k0/SublimeHighlight”添加进去，然后在</a> Install Package, 或者通过终端进入 sublime text 的插件目录，什么？你不知道插件目录在哪里，通过 Preferences =》Browse Packages…,再查看地址栏，然后在终端 cd 到插件目录<br> <code>git clone https://github.com/n1k0/SublimeHighlight.git &#39;SublimeHighlight&#39;</code><br> 回车安装。</p>
+<a id="more"></a>
+
+<p>安装完全之后建议认真阅读<a href="https://github.com/n1k0/SublimeHighlight" target="_blank">帮助文档</a>,我的配置如下</p>
+<blockquote>
+<pre>{
+
+  "theme": "pastie",
+
+  "linenos": false,
+
+  "noclasses": false,
+
+  "fontface": "Menlo"
+
+}
+
+//theme 指主题
+
+//linenos 是否显示line number
+
+//noclasses 是否嵌入行内样式
+
+//fontface 指使用字体
+
+</pre>
+
+</blockquote>
+<p>重启sublime，然后在你的右键菜单中就可以看到 copy as html，copy as rtf这两个选项，我们需要的是第一项，果断选择代码，copy as html，粘贴，保存为网页，通过浏览器打开，怎么样，样式出来了吧。</p>
+<p><img src="http://www.libiao.name/wp-content/uploads/2013/04/highlight.png" alt="highlight"></p>
+<p><img src="http://www.libiao.name/wp-content/uploads/2013/04/highlight2.png" alt="highlight2"></p>
+<p>查看复制出来的代码，发现是一个完整的 html 文档，包含一段style样式和 div.highlight, style跟我们在配置里的主题相关，提取出来，可以直接放入我们自己的主题 style 文件中，而 div.highlight 哪里需要就复制到哪里（注意在代码模式下）。</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/sublime text/" term="sublime text"/>
+    <category scheme="http://libiao.name/tags/SublimeHighlight/" term="SublimeHighlight"/>
+    <category scheme="http://libiao.name/tags/高亮/" term="高亮"/>
+    <category scheme="http://libiao.name/categories/Web生活/" term="Web生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[IE8下hover失效的bug解决]]></title>
+    <link href="http://libiao.name/2013/ie8-opacity-link-hover-bug.html"/>
+    <id>http://libiao.name/2013/ie8-opacity-link-hover-bug.html</id>
+    <published>2013-02-27T16:07:48.000Z</published>
+    <updated>2013-12-06T16:28:33.000Z</updated>
+    <content type="html"><![CDATA[<p>好久都没碰到过单独在IE8里出现问题的情况了…</p>
+<h3>问题描述：</h3>
+<p>链接(a)hover效果在IE8会失效，如果你用Css或Javascript设置了“filter”属性的话。</p>
+<img src='/uploads/2013/02/ie8-hover-bug.jpg?1386499365038' />
+
+<img src='/uploads/2013/02/ie8-hover-bug2.png?1386499365038' />
+
+
+<h3>解决办法：</h3>
+<p>将链接(a)的“filter”重置为空</p>
+<blockquote>
+<p>a{ -ms-filter: “”; /<em> Reset the filter property </em>/ }</p>
+</blockquote>
+]]></content>
+    <category scheme="http://libiao.name/categories/前端开发/" term="前端开发"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Sublime text 常用快捷键小结]]></title>
+    <link href="http://libiao.name/2013/sublime-text-shortcut-key.html"/>
+    <id>http://libiao.name/2013/sublime-text-shortcut-key.html</id>
+    <published>2013-01-30T15:13:58.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<h3>1. 项目文件夹浏览</h3>
+<p>sublime是基于项目管理，侧边栏可以导入正在开发的项目文件夹，(ctrl+k,ctrl+b)快捷键可以开关侧栏(ps: 这里逗号分隔的两个快捷键代表按下ctrl的同时先按k再按b，这种方式大大增加了快捷键的使用有效率),同时右键菜单里可以remove folder移除文件夹</p>
+<h3>2. 文件快速导航：</h3>
+<p>这是sublime上面很好用的功能之一，ctrl+p可以调出窗口，菜单上的解释是goto anythings ，确实如其所言，调出窗口后，直接输入关键字，可以在已打开的项目文件夹中进行快速文件名导航，而且支持模糊搜索 ，对于不想一直鼠标点开文件夹的同学来说极为方便，并且在该窗口里加上:前缀即为行跳转(ctrl+g)，加上@(ctrl+r)前缀在html里是id 关键字导航，css里是每条规则导航，js里则是每个function导航。</p>
+<h3>3. 命令行模式</h3>
+<p>ctrl+`(esc下面) 可以调出命令行模式，主要支持python语法等，没试用过只知 quit()可以退出 。。不过sublime的插件平台package controller可以用命令行安装，详见这里</p>
+<h3>4. 注释</h3>
+<p>ctrl+/ 单行注释</p>
+<p>ctrl+shift+/块注释，sublime会自动根据语言选择注释方式</p>
+<h3>5. 折叠</h3>
+<p>ctrl+shift+[ 折叠代码（光标所在块）</p>
+<p>ctrl+shift+] 展开折叠的代码（光标所在块）</p>
+<p>ctrl+k,t 折叠所有元素属性</p>
+<p>ctrk+k,0 取消所有折叠</p>
+<p>ctrl+k,ctrl+1~9 折叠第1~第9级块（第2级最有用）</p>
+<h3><a id="more"></a>6.卷屏</h3>
+<p>ctrl + ↑/↓ 一行一行的滚动屏幕</p>
+<p>pageup pagedown 一页一页翻动</p>
+<h3>7. 区域\行操作</h3>
+<p>ctrl+l 选择当前行（按住-继续选择下行）</p>
+<p>ctrl+j  是拼合两行</p>
+<p>ctrl+shift+d  复制当前行</p>
+<p>ctrl + shift + k    删除行</p>
+<p>ctrl+shift+↑ 与上行互换</p>
+<p>ctrl+shift+↓ 与下行互换</p>
+<p>ctrl+k backspace 从光标处删除至行首</p>
+<p>ctrl+kk 从光标处删除至行尾</p>
+<p>ctrl + shift + enter 往光标所有行之前换一行</p>
+<p>ctrl + enter 往光标所有行之后换一行</p>
+<p>ctrl+d 选择当前文字块</p>
+<p>alt + f3 选择所有选中内容</p>
+<p>ctrl+shift+a 可以html标签内容，每按一次逐级往上</p>
+<p>ctrl+shift+space可以选择js等语言里的块{内容},</p>
+<h3>8. 标记</h3>
+<p>ctrl+f2    可以进行标记</p>
+<p>f2    下一个标记</p>
+<p>shift+f2    上一个标记</p>
+<h3>9. 编译</h3>
+<p>ctrl+b</p>
+<h3>10. 边栏操作</h3>
+<p>ctrl+k, ctrl+b 切换边栏</p>
+<h3>11. 查找替换</h3>
+<p>ctrl+f    查找</p>
+<p>ctrl+h   替换</p>
+<p>ctrl+shift+f 是文件夹里查找/替换，与普通编辑不同的地方是sublime允许添加多个文件夹进行查找(add directory)</p>
+<h3>12. 粘贴复制撤销</h3>
+<p>ctrl+c 复制</p>
+<p>ctrl+v 粘贴</p>
+<p>ctrl+z 撤销</p>
+<p>ctrl+y 恢复撤销</p>
+<p>ctrl+u 软撤销</p>
+<h3>13. 缩进</h3>
+<p>tab 缩进/自动完成</p>
+<p>shift+tab 去除缩进</p>
+<h3>14. 其他</h3>
+<p>alt+. 闭合当前标签</p>
+<p>ctrl+t 词互换</p>
+<p>ctrl+ku 改为大写</p>
+<p>ctrl+kl 改为小写</p>
+<p>ctrl + ,    展开缩写(zencoding)</p>
+<p>f1      style 标签中智能提示样式</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/sublime text/" term="sublime text"/>
+    <category scheme="http://libiao.name/categories/开发工具/" term="开发工具"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Terminal 2.3(v309) has not been tested with the plugin]]></title>
+    <link href="http://libiao.name/2012/terminal-has-not-been-tested-with-the-plugin.html"/>
+    <id>http://libiao.name/2012/terminal-has-not-been-tested-with-the-plugin.html</id>
+    <published>2012-12-12T16:05:07.000Z</published>
+    <updated>2013-12-08T09:00:29.000Z</updated>
+    <content type="html"><![CDATA[<img src='/uploads/2012/12/Terminal-.jpg?1386499365038' />
+
+
+<p>Terminal 2.3(v309) has not been tested with the plugin TerminalColours (null)(v1.0). As a precaution, it has not been loaded. Please contact the plugin developer for further information.<br>小白对于这样的错都手足无措了。</p>
+<p>最后的解决办法：</p>
+<p>With the recent update to OSX Snow Leopard if your’re using the TerminalColors SIMBL plugin you may notice you’ll have an error when loading your Terminal.</p>
+<p>This is easily fixable, by modifiying the Info.plist in the plugin to check for a higher version.</p>
+<blockquote>
+<p>cd ~/Library/Application\ Support/SIMBL/Plugins/TerminalColours.bundle/Contents</p>
+</blockquote>
+<p>open Info.plist in your favourite editor find the following lines:</p>
+<blockquote>
+<p>MaxBundleVersion</p>
+<p>272</p>
+<p>MinBundleVersion</p>
+<p>240</p>
+</blockquote>
+<p>change the 272 to v309或者更大<br>save the file, close your Terminal.app completely (Cmd+Q)</p>
+<p>Start Terminal again and everything should be back to normal.</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/mac/" term="mac"/>
+    <category scheme="http://libiao.name/tags/terminal/" term="terminal"/>
+    <category scheme="http://libiao.name/categories/mac/" term="mac"/>
+    <category scheme="http://libiao.name/categories/mac/Web生活/" term="Web生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[TAE SDK2在mac下报JAVA_HOME does not point]]></title>
+    <link href="http://libiao.name/2012/tae-sdk2-mac-java_home.html"/>
+    <id>http://libiao.name/2012/tae-sdk2-mac-java_home.html</id>
+    <published>2012-08-30T15:17:06.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>淘宝模板最近新出了sdk，win和mac版本都有，但在终端 sh startServer.sh时报</p>
+<blockquote>
+<p>JAVA_HOME does not point at a JDK or JRE.  Either set the JAVA_HOME environment variable or specify a JDK.<br>查看StartServer.sh没看出什么苗头，转头一向难道是我本地的java环境有问题，在终端输入<br>javac -version<br>查看java的版本，果然提示我安装，然后就一路next，完成之后重新sh startServer.sh，启动成功，然后，就没然后了……</p>
+</blockquote>
+]]></content>
+    <category scheme="http://libiao.name/tags/淘宝/" term="淘宝"/>
+    <category scheme="http://libiao.name/categories/Web生活/" term="Web生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[Mac下nodejs初体验]]></title>
+    <link href="http://libiao.name/2012/mac-nodejs.html"/>
+    <id>http://libiao.name/2012/mac-nodejs.html</id>
+    <published>2012-07-27T14:46:34.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>sublime text2是一款强大的跨平台Code Editor，最近在mac os下体验下nodejs，用来不来xcode，vim等神器，只能在我的st2下折腾。</p>
+<p>在官方下载0.8.4版本nodejs，一路next到安装完成，对于对mac终端不感冒的我来说能在Editor下解决的尽量解决，Command+shift+p》install》enter》nodejs》enter，一切都是这么和谐，新建js文档，保存如下文档：</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span><br><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span><br>    <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">});</span><br>    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World\n&#39;</span><span class="p">);</span><br><span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8808</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">);</span><br><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at <a href="http://127.0.0.1:8808&amp;#39" target="_blank">http://127.0.0.1:8808&amp;#39</a>;</span><span class="p">);</span><br></pre></div>
+
+<p>右键-nodejs-run，提示找不到/usr/bin/node，好吧，打开nodejs配置文档</p>
+<blockquote>
+<p>// e.g. “/usr/bin/node” or &quot;C:\bin\node.exe&quot;</p>
+<p>&quot;node_command&quot;: false,</p>
+</blockquote>
+<p>查看下nodejs安装路径，发现正确地址是：/usr/local/bin/node，同时将npm_command路径也改成/usr/local/bin/npm，最终</p>
+<blockquote>
+<p>&quot;node_command“: ”/usr/local/bin/node&quot;,</p>
+<p>&quot;npm_command“: ”/usr/local/bin/npm&quot;,</p>
+</blockquote>
+<p>再次run，提示Server running at <a href="http://127.0.0.1:8808，在浏览器里边打开http://127.0.0.1:8808，又一个hellow" target="_blank">http://127.0.0.1:8808，在浏览器里边打开http://127.0.0.1:8808，又一个hellow</a> world诞生，至此，nodejs-mac下初体验完成…</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/mac/" term="mac"/>
+    <category scheme="http://libiao.name/tags/nodejs/" term="nodejs"/>
+    <category scheme="http://libiao.name/categories/Javascript/" term="Javascript"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[js封装地区联动]]></title>
+    <link href="http://libiao.name/2012/js-city-select.html"/>
+    <id>http://libiao.name/2012/js-city-select.html</id>
+    <published>2012-07-05T15:50:41.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>同上一个demo（<a href="http://www.libiao.name/js-paging-2.html" title="简单js分页（2）" target="_blank">简单js分页</a>）一样，原型和构造的结合，时间较短，写的比较粗糙，但基本够用了。<br><a href="http://www.libiao.name/wp-content/uploads/2012/07/地区联动.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2012/07/地区联动.png" alt="地区联动" title="地区联动"></a></p>
+<h3>特性</h3>
+<ol>
+<li>支持同一页面多个插入</li>
+<li>支持2级或3级联动</li>
+<li>插入方法简单，一个new，生成实例就可以了</li>
+<li>关于初始值给定，后续有需求可以加上<br>demo地址：<a href="http://www.libiao.name/demo/city-select/demo.html" title="地区联动" target="_blank">地区联动</a></li>
+</ol>
+]]></content>
+    <category scheme="http://libiao.name/tags/Javascript/" term="Javascript"/>
+    <category scheme="http://libiao.name/tags/原型/" term="原型"/>
+    <category scheme="http://libiao.name/tags/地区联动/" term="地区联动"/>
+    <category scheme="http://libiao.name/tags/构造/" term="构造"/>
+    <category scheme="http://libiao.name/categories/Javascript/" term="Javascript"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[简单js分页（2）]]></title>
+    <link href="http://libiao.name/2012/js-paging-2.html"/>
+    <id>http://libiao.name/2012/js-paging-2.html</id>
+    <published>2012-07-01T14:31:58.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>之前不久写了一篇《<a href="http://www.libiao.name/js-paging.html" target="_blank">简单js分页</a>》，但后来发现在项目中不够试用，当一个页面需要插入多个分页的时候就不能够胜任，于是就有了这一篇</p>
+<p>简单说明下源码</p>
+<script type="text/javascript" src="https://gist.github.com/4177697.js?file=js-page.js"></script>
+
+<p>使用构造函数来存储变量，原型来存放方法，最大限度减少内存占用，new实例的时候参数采用对象传入参数，减少输入错误，</p>
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">fenye1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PageNav</span><span class="p">({</span><br>    <span class="nx">container</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#pgt&gt;div&#39;</span><span class="p">),</span><br>    <span class="nx">perNumber</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span><br>    <span class="nx">totalNumber</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span><br>    <span class="nx">callBack</span><span class="o">:</span> <span class="nx">getInfo</span><br><span class="p">});</span><br></pre></div>
+
+<blockquote>
+<p>container： 插入分页的标签</p>
+<p>perNumber: 每页数目</p>
+<p>totalNumber: 项目总数</p>
+<p>callBack： 回调函数，会默认返回page</p>
+</blockquote>
+<p>具体请看demo： <a href="http://www.libiao.name/demo/pagenav/demo.htm" target="_blank">js分页</a></p>
+]]></content>
+    <category scheme="http://libiao.name/tags/Javascript/" term="Javascript"/>
+    <category scheme="http://libiao.name/tags/原型/" term="原型"/>
+    <category scheme="http://libiao.name/tags/构造函数/" term="构造函数"/>
+    <category scheme="http://libiao.name/categories/Javascript/" term="Javascript"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[简单js分页]]></title>
+    <link href="http://libiao.name/2012/js-paging.html"/>
+    <id>http://libiao.name/2012/js-paging.html</id>
+    <published>2012-05-05T17:15:54.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>最近的《暗恋通知书》项目中写的，觉得可能以后也会用到，就提取了一下，先上图</p>
+<p><a href="http://www.libiao.name/wp-content/uploads/2012/05/js-paging2.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2012/05/js-paging2.png" alt="js-paging" title="js-paging2"></a></p>
+<p><a href="http://www.libiao.name/wp-content/uploads/2012/05/js-paging3.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2012/05/js-paging3.png" alt="" title="js-paging3"></a></p>
+<p><a href="http://www.libiao.name/wp-content/uploads/2012/05/js-paging.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2012/05/js-paging.png" alt="" title="js-paging"></a></p>
+<p>代码挺简单的，DEMO请移步：<a href="http://www.libiao.name/demo/js-paging/demo.htm" title="js-分页" target="_blank"> 点此查看</a></p>
+]]></content>
+    <category scheme="http://libiao.name/tags/Javascript/" term="Javascript"/>
+    <category scheme="http://libiao.name/categories/Javascript/" term="Javascript"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[多邮箱登录（仿hao123）]]></title>
+    <link href="http://libiao.name/2012/moreemaillogin.html"/>
+    <id>http://libiao.name/2012/moreemaillogin.html</id>
+    <published>2012-03-02T08:58:00.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>之前一个未完工的项目中写的，现单独提取出来，上效果图：</p>
+<p><a href="http://www.libiao.name/wp-content/uploads/2012/03/多邮箱登录（仿hao123）.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2012/03/多邮箱登录（仿hao123）.png" alt="多邮箱登录（仿hao123）" title="多邮箱登录（仿hao123）"></a></p>
+<p>数据是单独提取出来了，通过动态加入的：</p>
+<p><a href="http://www.libiao.name/wp-content/uploads/2012/03/maildata.png" target="_blank"><img src="http://www.libiao.name/wp-content/uploads/2012/03/maildata.png" alt="maildata" title="maildata"></a></p>
+<p>以前几乎没弄过这样的效果，很是艰难，不过总算完成了！！！</p>
+<p>预览：<a href="http://www.libiao.name/demo/MoreEmailLogin/demo.htm" title="多邮箱登录（仿hao123）demo" target="_blank">点击前往</a>    <a href="http://biaocodehub.googlecode.com/files/MoreEmailLogin.7z" title="moreemaillogin" target="_blank">点击下载</a></p>
+]]></content>
+    <category scheme="http://libiao.name/tags/多邮箱登录/" term="多邮箱登录"/>
+    <category scheme="http://libiao.name/categories/Javascript/" term="Javascript"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[sublime text 2安装ZenCoding后设置其快捷键]]></title>
+    <link href="http://libiao.name/2012/sublime-text-2-zencoding.html"/>
+    <id>http://libiao.name/2012/sublime-text-2-zencoding.html</id>
+    <published>2012-02-19T13:55:56.000Z</published>
+    <updated>2013-12-08T09:01:32.000Z</updated>
+    <content type="html"><![CDATA[<p>关于如何安装插件请移步<a href="http://www.jankerli.com/?p=1359" title="关于使用Sublime Text 2的那些事儿" target="_blank">《关于使用Sublime Text 2的那些事儿》</a></p>
+<p>由于在notepad++里面的zencoding快捷键是设置成ctrl+e，所以在sublime里边也想要改过来（默认是tab），方法如下</p>
+<img src='/uploads/2012/02/sublime-text-2-zencoding.png?1386499365038' />
+
+
+<p>菜单-preferences =&gt; key bindings - default =&gt; 搜寻tab</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>{ <span class="string">"keys"</span>: [<span class="string">"tab"</span>], <span class="string">"command"</span>: <span class="string">"insert_best_completion"</span>, <span class="string">"args"</span>: {<span class="string">"default"</span>: <span class="string">"\t"</span>, <span class="string">"exact"</span>: <span class="literal">true</span>} },
+{ <span class="string">"keys"</span>: [<span class="string">"tab"</span>], <span class="string">"command"</span>: <span class="string">"insert_best_completion"</span>, <span class="string">"args"</span>: {<span class="string">"default"</span>: <span class="string">"\t"</span>, <span class="string">"exact"</span>: <span class="literal">false</span>},
+</pre></td></tr></table></figure>
+
+
+<p>将第二个tab替换成你想要设置的快捷键，注意不要与其他冲突…</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/sublime text 2/" term="sublime text 2"/>
+    <category scheme="http://libiao.name/tags/zen conding/" term="zen conding"/>
+    <category scheme="http://libiao.name/categories/开发工具/" term="开发工具"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[为FireFox增加自定义搜索引擎-w3school]]></title>
+    <link href="http://libiao.name/2011/for-firefox-adding-custom-search-engine-w3school.html"/>
+    <id>http://libiao.name/2011/for-firefox-adding-custom-search-engine-w3school.html</id>
+    <published>2011-12-27T16:00:14.000Z</published>
+    <updated>2013-12-06T16:18:22.000Z</updated>
+    <content type="html"><![CDATA[<p>好像已经养成一种习惯了，在firefox上搜索是我不会再打开baidu或者google，而是直接在工具栏上搜索了，w3school是初级菜鸟码农必查的，故萌生把w3school的搜索添加到firefox上。</p>
+<p>Firefox添加搜索引擎大概有这么集中方法</p>
+<h3>1.安装插件</h3>
+<p>点击搜索栏，左边的下拉按钮，选择“管理搜索引擎”，在出现的页面点击”获取更多搜索引擎“，这个时候会登录到mozilla的add-on的网站上，随便点点就安装上了，里边的搜索引擎不多，不太适合国内用户</p>
+<h3>2.特别环境安装</h3>
+<p>火 狐打开可以增加搜索引擎的页面会提示你安装，比如你打开爱词霸的网站 <a href="http://www.iciba.com/" target="_blank">http://www.iciba.com/</a> ，这个时候点击的搜索栏左边的下拉按钮，会出现” 增加 ”爱词霸辞典“ “，点击这个，会自动把当前页面提供的搜索引擎增加到你的搜索栏。</p>
+<h3>3.手动添加</h3>
+<p>自定义才是王道，查看w3school的搜索，是调用Goolge的自定义搜索来实现的，</p>
+<blockquote>
+<p><a href="http://www.google.com.hk/search?sitesearch=w3school.com.cn&amp;as_q=html5" target="_blank">http://www.google.com.hk/search?sitesearch=w3school.com.cn&amp;as_q=html5</a><br>找到Firefox的搜索引擎目录searchplugins(在安装目录下)，里边有内置的几个，我们新建一个名为 w3.xml 的文件，将下面的代码保存进去</p>
+</blockquote>
+<script src="https://gist.github.com/4205217.js?file=w3.xml"></script>
+
+<p>Image标签内是一个base64的图像</p>
+<img src='/uploads/2011/12/w3school.bmp?1386499365038' />
+
+
+<p><span style="color: #666699;"><strong>关于搜索栏图标的做法：</strong></span></p>
+<ol>
+<li>制作一张 16x16的bmp文件。</li>
+<li>打开下面的页面 <a href="http://software.hixie.ch/utilities/cgi/data/data" target="_blank">http://software.hixie.ch/utilities/cgi/data/data</a></li>
+<li>在出现的页面选中“base64”，在“Alternatively, upload a file:”右边，提交刚才制作好的文件</li>
+<li>点击按钮Generate<br>下载：<a href="http://www.libiao.name/wp-content/uploads/2011/12/w3.zip" target="_blank">w3</a></li>
+</ol>
+]]></content>
+    <category scheme="http://libiao.name/categories/Web生活/" term="Web生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[notepad++ 启动和关闭都提示root element is missing]]></title>
+    <link href="http://libiao.name/2011/notepad-root-element-is-missing.html"/>
+    <id>http://libiao.name/2011/notepad-root-element-is-missing.html</id>
+    <published>2011-12-24T08:20:11.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p>如题，不晓得什么时候启动和关闭notepad++的时候都弹出提示框：<strong><span style="color: #ff0000;">root element is missing</span></strong>，但却不影响正常工作。</p>
+<p>网上说是什么根元素丢失，按照提供的方法清空了系统的临时文件夹等等，都没用…只好自己寻找解决办法：</p>
+<p>其他软件没出现错误，应该是notepad++的原因，最有可能是主题or插件or其他配置文件，一步一步排除，最终发现剔除SnippetPlus这个插件后，恢复正常，留个记号…</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/notepad/" term="notepad"/>
+    <category scheme="http://libiao.name/categories/Web生活/" term="Web生活"/>
+  </entry>
+  <entry>
+    <title type="html"><![CDATA[清理浮动的几种方法以及对应规范说明-转]]></title>
+    <link href="http://libiao.name/2011/clear-all-studio.html"/>
+    <id>http://libiao.name/2011/clear-all-studio.html</id>
+    <published>2011-12-13T15:13:22.000Z</published>
+    <updated>2013-12-03T16:52:12.000Z</updated>
+    <content type="html"><![CDATA[<p><strong><span style="color: #ff0000;">前言</span></strong></p>
+<p>浮动 Floats 是 CSS 中的一种布局方式。它的渲染位置在行框与包含块之间，这样就可以使行框内文字与浮动元素不重叠并且环绕它显示。在布局过程中也经常会使用它来达到左右并排布局的效果。但是，由于浮动特性，容器如果没有明确设定高度，会依照普通流内元素高度设置，这样就会导致脱离普通流的浮动元素溢出容器，影响其后元素布局。</p>
+<p>我们将现有已知的清楚浮动元素方法罗列下：</p>
+<ol>
+<li>采用一个HTML标签，以及css的clear属性，来手工清理浮动；</li>
+<li>采用伪类:after，动态建立一个块元素，设定 clear 属性，清理之前的浮动元素；</li>
+<li>采用CSS overflow 非 visible 值(overflow:auto/overflow:hidden)设定使父容器包含浮动元素；</li>
+<li>采用display:table/display:table-cell 等table系列属性将父元素变成 table 形式自动包含浮动元素；</li>
+<li>使用 TABLE 以及 TD 标签作为浮动元素容器；</li>
+<li>采用 float:left/float:right 方式将父元素同样浮动，就可以包含浮动内容；</li>
+<li>在 IE 6/7 的标准文档模式中设置 “width/height/zoom” 等样式来自动清理浮动。<br>对这些方式我们一一来对照 CSS 标准（或者浏览器特性）来解释下。</li>
+</ol>
+<h2>使用 clear 样式清除</h2>
+<p>样例：</p>
+<pre>
+.clear-float {clear:both;}
+</pre>
+
+<p><a id="more"></a><br>clear 属性是 CSS 1 就提供的用来清除浮动的样式，设置了 clear 属性的元素，其上边框位置会紧贴浮动元素的 margin-bottom 边界位置渲染，忽略其 margin-top 设置。这样，父容器高度未设定(值是 auto)时，由于定义的清理浮动样式元素所在位置处于浮动元素之下，容器计算后的实际高度就包含了浮动元素。</p>
+<h2>使用伪元素 :after 清除</h2>
+<p>样例：</p>
+<pre>
+.after-clear-float :after{content:&quot;&quot;; display:block; clear:both;}
+</pre>
+
+<p>:after 伪元素是在 CSS 2 规范内提出的，IE 6/7 并不支持。它的作用是在指定该伪元素元素内，所有子元素最后自动生成一个伪元素，并可以为这个伪元素设定样式。在设定样式中，使用 clear 属性即可达到与手工添加元素指定清理的效果。</p>
+<p>注意兼容问题：<br>:after 伪元素在 IE6/7 中并不被支持，这是由于之前的 IE 版本仅完全实现了 CSS 1 规范标准，以及一部分 CSS 2 规范，恰巧 :after 伪元素不在实现之例。</p>
+<h2>使用 overflow 清除</h2>
+<p>样例：</p>
+<pre>
+.overflow-clear-float {overflow:hidden;}
+/* 或者 */
+.overflow-clear-float {overflow:auto;}
+</pre>
+
+<p>overflow 样式值为 非 visilbe 时，实际上是创建了 CSS 2.1 规范定义的 Block Formatting Contexts。创建了它的元素，会重新计算其内部元素位置，从而获得确切高度。这样父容器也就包含了浮动元素高度。这个名词过于晦涩，在 CSS 3 草案中被变更为名词 Root Flow，顾名思义，是创建了一个新的根布局流，这个布局流是独立的，不影响其外部元素的。实际上，这个特性与 早期 IE 的 hasLayout 特性十分相似。</p>
+<p>注意兼容问题：<br>Block Formatting Contexts 概念是在 CSS 2.1 规范内被提出。因此 IE6/7 中并不被支持，这是由于之前的 IE 版本仅完全实现了 CSS 1 规范标准，以及一部分 CSS 2.0 规范。在 IE 7 中，overflow 值为非 visible 时，可以触发 hasLayout 特性。这同样使得 IE 7 同样可以使容器包含浮动元素。</p>
+<h2>使用 display:table 清除</h2>
+<p>样例：</p>
+<pre>
+.table-clear-float {display:table}
+/* 或者 */
+.table-clear-float {display:table-cell}
+</pre>
+
+<p>当元素 display 值被设定为 table 或 table-cell 时，同样也创建了 CSS 2.1 规范定义的 Block Formatting Contexts。这样父容器也就包含了浮动元素高度。</p>
+<p>注意兼容问题：<br>除去 Block Formatting Contexts 在 IE 6/7 中的兼容性外，display:talbe 系列样式设定也不在 IE6/7 的支持范围之内。</p>
+<h2>使用表格类元素作为浮动元素容器</h2>
+<p>样例：</p>
+<pre>
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+<p>当使用 TABLE TD TH 等 TABLE 系列标签时， 元素的 display 值实际上说是 display: table 系列，这同样也创建了 CSS 2.1 规范定义的 Block Formatting Contexts。这样父容器也就包含了浮动元素高度。同时在 IE 6/7 中，TABLE TD TH 等 TABLE 系列标签天然拥有 haslayout 特性，这也可以使容器自动包含浮动元素高度。</p>
+<h2>使用浮动父元素清除</h2>
+<p>当元素设置 float:left/float:right 时 ，同样也创建了 CSS 2.1 规范定义的 Block Formatting Contexts。这样父容器也就包含了浮动元素高度。同时，这个样式也会在 IE 6/7 内触发 hasLayout 特性，拥有这个特性的元素也可以计算出浮动元素的高度，使父元素包含他们。</p>
+<p>实际问题：<br>虽然这种方式并没有兼容问题，但实际使用中并不推荐。因为很容易推断出，页面中只要有一个浮动元素，使用该方法清理浮动将不可避免的使页面所有元素都浮动才可以达到预期效果。</p>
+<h2>触发 hasLayout 清除</h2>
+<p>样例：</p>
+<pre>
+haslayout-clear-float:{width:1px}
+/* 或 */
+.haslayout-clear-float:{height:1px}
+/* 或 */
+.haslayout-clear-float:{zoom:1}
+</pre>
+
+<p>‘Layout’ 是 IE 的专有概念，它决定了元素如何对其内容进行定位和尺寸计算，与其他元素的关系和相互作用，以及对应用还有使用者的影响。</p>
+<p>‘Layout’ 可以被某些 CSS property（特性）不可逆的触发，而某些 HTML 元素本身就具有 layout 。</p>
+<p>‘Layout’ 在 IE 中可以通过 hasLayout 属性来判断一个元素是否拥有 layout ，如 object.currentStyle.hasLayout 。</p>
+<p>‘Layout’ 是 IE 浏览器渲染引擎的一个内部组成部分。在 IE 浏览器中，一个元素要么自己对自身的内容进行组织和计算大小， 要么依赖于包含块来计算尺寸和组织内容。为了协调这两种方式的矛盾，渲染引擎采用了 ‘hasLayout’ 属性，属性值可以为 true 或 false。 当一个元素的 ‘hasLayout’ 属性值为 true 时，我们说这个元素有一个布局（layout），或拥有布局。</p>
+<h3>默认拥有布局的元素：</h3>
+<pre>
+&lt;html&gt;, &lt;body&gt;
+&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;
+&lt;img&gt;
+&lt;hr&gt;
+&lt;input&gt;, &lt;button&gt;, &lt;select&gt;, &lt;textarea&gt;, &lt;fieldset&gt;, &lt;legend&gt;
+&lt;iframe&gt;, &lt;embed&gt;, &lt;object&gt;, &lt;applet&gt;
+&lt;marquee&gt;
+</pre>
+
+<h3>可触发 hasLayout 的 CSS 特性：</h3>
+<pre>
+display: inline-block
+height: (除 auto 外任何值)
+width: (除 auto 外任何值)
+float: (left 或 right)
+position: absolute
+writing-mode: tb-rl
+zoom: (除 normal 外任意值)
+</pre>
+
+<h3>IE7 还有一些额外的属性(不完全列表)可以触发 hasLayout ：</h3>
+<pre>
+min-height: (任意值)
+min-width: (任意值)
+max-height: (除 none 外任意值)
+max-width: (除 none 外任意值)
+overflow: (除 visible 外任意值，仅用于块级元素)
+overflow-x: (除 visible 外任意值，仅用于块级元素)
+overflow-y: (除 visible 外任意值，仅用于块级元素)
+position: fixed
+</pre>
+
+<p>IE6 以前的版本（也包括 IE6 及以后所有版本的混杂模式，其实这种混杂模式在渲染方面就相当于 IE 5.5）， 通过设置任何元素的 ‘width’ 或 ‘height’（非auto）都可以触发 hasLayout ； 但在 IE6 和 IE7 的标准模式中的行内元素上却不行，设置 ‘display:inline-block’ 才可以。</p>
+<h3>注意兼容问题：</h3>
+<p>haslayout 特性仅 IE 支持，其他浏览器并无此特性。可以依靠计算布局清理浮动的 haslayout 特性仅在 IE 6/7 中存在，IE8 之后将使用 CSS 2.1 的 Block Formatting Contexts 定义来达到同样效果。</p>
+<p>注：IE hasLayout 特性厂商说明链接：hasLayout Property</p>
+<p>以上内容是常见清理浮动手段生效的规范（和浏览器厂商特性）原理。我们希望页面开发者们，根据他们的兼容性特征以及实际情况来组合使用，以便达到实际项目目标。<br>建议</p>
+<p>对于初学者我们推荐如下方式之一来清理浮动元素，它们均相对简单可靠：</p>
+<p>采用一个HTML标签，以及css的clear属性，来手工清理浮动；<br>为元素设置 overflow:hidden 或 overflow:auto 值，配合可以设置 zoom:1 样式触发 IE6 haslayout 特性，来达到兼容所有浏览器清理浮动的目的。<br>采用伪元素:after，配合可以设置 zoom:1 样式触发 IE6/7 haslayout 特性，来达到兼容所有浏览器清理浮动的目的。</p>
+]]></content>
+    <category scheme="http://libiao.name/tags/clear/" term="clear"/>
+    <category scheme="http://libiao.name/tags/清除浮动/" term="清除浮动"/>
+    <category scheme="http://libiao.name/categories/前端开发/" term="前端开发"/>
+  </entry>
+</feed>
