@@ -16,32 +16,48 @@
     <meta property="og:image" content="undefined"/>
   
 
-  <link href="/favicon.png" rel="icon">
+  <link href="/favicon.ico" rel="icon">
   <link rel="alternate" href="/atom.xml" title="LiBiao's Blog" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  
 </head>
 
 
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">LiBiao's Blog</a></h1>
-  <h2><a href="/">奔跑于泥地中为梦想</a></h2>
+    <header id="masthead" class="" role="banner">
+    <div class="wrap">
+        <hgroup>
+        <h1 id="site_title"><a href="/">LiBiao's Blog</a></h1>
+        <h2 id="site_description"><a href="/">奔跑于泥地中为梦想</a></h2>
+      </hgroup>
+
+      <nav id="site_nav" role="navigation">
+        <ul>
+          
+            <li><a href="/">Home</a></li>
+          
+            <li><a href="/archives">Archives</a></li>
+          
+        </ul>
+      </nav>
+
+      <div class="search">
+  <form role="search" method="get" class="search_form" action="//google.com/search" accept-charset="utf-8" target="_blank">
+    <label>
+      <span class="screen_reader_text">搜索：</span>
+      <input type="search" class="search_field" placeholder="搜索…" value="" name="q" title="搜索" results="0">
+      <input type="hidden" name="q" value="site:libiao.name">
+    </label>
+    <input type="submit" class="search_submit" value="搜索">
+  </form>
 </div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
+
+    </div>
+</header>
+
+
+    <div id="content" class="wrap">
+        
 <h2 class="archive-title">2012</h2>
 
 
@@ -55,14 +71,14 @@
         <time datetime="2012-12-12T16:05:07.000Z"><a href="/2012/terminal-has-not-been-tested-with-the-plugin.html">12月 13 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/terminal-has-not-been-tested-with-the-plugin.html">Terminal 2.3(v309) has not been tested with the plugin</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/terminal-has-not-been-tested-with-the-plugin.html">Terminal 2.3(v309) has not been tested with the plugin</a></h1>
+        
+      
     </header>
     <div class="entry">
       
-        <img src='//libiao.qiniudn.com/_uploads/2012/12/Terminal-.jpg?1386514974359' />
+        <img src='/_uploads/2012/12/Terminal-.jpg?1387463302831' />
 
 
 <p>Terminal 2.3(v309) has not been tested with the plugin TerminalColours (null)(v1.0). As a precaution, it has not been loaded. Please contact the plugin developer for further information.<br>小白对于这样的错都手足无措了。</p>
@@ -74,10 +90,7 @@
 </blockquote>
 <p>open Info.plist in your favourite editor find the following lines:</p>
 <blockquote>
-<p>MaxBundleVersion</p>
-<p>272</p>
-<p>MinBundleVersion</p>
-<p>240</p>
+<p>MaxBundleVersion<br>272<br>MinBundleVersion<br>240</p>
 </blockquote>
 <p>change the 272 to v309或者更大<br>save the file, close your Terminal.app completely (Cmd+Q)</p>
 <p>Start Terminal again and everything should be back to normal.</p>
@@ -95,6 +108,8 @@
 </article>
 
 
+
+
   
     <article class="post">
   
@@ -105,10 +120,10 @@
         <time datetime="2012-08-30T15:17:06.000Z"><a href="/2012/tae-sdk2-mac-java_home.html">8月 30 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/tae-sdk2-mac-java_home.html">TAE SDK2在mac下报JAVA_HOME does not point</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/tae-sdk2-mac-java_home.html">TAE SDK2在mac下报JAVA_HOME does not point</a></h1>
+        
+      
     </header>
     <div class="entry">
       
@@ -130,6 +145,8 @@
 </article>
 
 
+
+
   
     <article class="post">
   
@@ -140,28 +157,45 @@
         <time datetime="2012-07-27T14:46:34.000Z"><a href="/2012/mac-nodejs.html">7月 27 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/mac-nodejs.html">Mac下nodejs初体验</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/mac-nodejs.html">Mac下nodejs初体验</a></h1>
+        
+      
     </header>
     <div class="entry">
       
         <p>sublime text2是一款强大的跨平台Code Editor，最近在mac os下体验下nodejs，用来不来xcode，vim等神器，只能在我的st2下折腾。</p>
 <p>在官方下载0.8.4版本nodejs，一路next到安装完成，对于对mac终端不感冒的我来说能在Editor下解决的尽量解决，Command+shift+p》install》enter》nodejs》enter，一切都是这么和谐，新建js文档，保存如下文档：</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span><br><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span><br>    <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span> <span class="s1">&#39;text/plain&#39;</span><span class="p">});</span><br>    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">&#39;Hello World\n&#39;</span><span class="p">);</span><br><span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8808</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">);</span><br><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Server running at <a href="http://127.0.0.1:8808&amp;#39" target="_blank">http://127.0.0.1:8808&amp;#39</a>;</span><span class="p">);</span><br></pre></div>
+<figure class="highlight lang-js"><div class="box"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="keyword">var</span> http = require(<span class="string">'http'</span>);
+http.createServer(<span class="keyword">function</span>(req, res){
+    res.writeHead(<span class="number">200</span>, {<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>});
+    res.end(<span class="string">'Hello World\n'</span>);
+}).listen(<span class="number">8808</span>, <span class="string">'127.0.0.1'</span>);
+console.log(<span class="string">'Server running at http://127.0.0.1:8808&#39;);
+</pre></td></tr></table></div></figure>
 
 <p>右键-nodejs-run，提示找不到/usr/bin/node，好吧，打开nodejs配置文档</p>
-<blockquote>
-<p>// e.g. “/usr/bin/node” or &quot;C:\bin\node.exe&quot;</p>
-<p>&quot;node_command&quot;: false,</p>
+<blockquote><p>// e.g. “/usr/bin/node” or &quot;C:\bin\node.exe&quot;<br>&quot;node_command&quot;: false,</p>
 </blockquote>
+
+
 <p>查看下nodejs安装路径，发现正确地址是：/usr/local/bin/node，同时将npm_command路径也改成/usr/local/bin/npm，最终</p>
-<blockquote>
-<p>&quot;node_command“: ”/usr/local/bin/node&quot;,</p>
-<p>&quot;npm_command“: ”/usr/local/bin/npm&quot;,</p>
+<blockquote><p>&quot;node_command“: ”/usr/local/bin/node&quot;,<br>&quot;npm_command“: ”/usr/local/bin/npm&quot;,</p>
 </blockquote>
-<p>再次run，提示Server running at <a href="http://127.0.0.1:8808，在浏览器里边打开http://127.0.0.1:8808，又一个hellow" target="_blank">http://127.0.0.1:8808，在浏览器里边打开http://127.0.0.1:8808，又一个hellow</a> world诞生，至此，nodejs-mac下初体验完成…</p>
+
+
+<p>再次run，提示</p>
+<blockquote><p>Server running at <a href="http://127.0.0.1:8808" target="_blank">http://127.0.0.1:8808</a></p>
+</blockquote>
+
+
+<p>在浏览器里边打开 <code>127.0.0.1:8808</code>，又一个hellow world诞生，至此，nodejs-mac下初体验完成…</p>
 
       
     </div>
@@ -174,6 +208,8 @@
     </footer>
   </div>
 </article>
+
+
 
 
   
@@ -186,21 +222,25 @@
         <time datetime="2012-07-05T15:50:41.000Z"><a href="/2012/js-city-select.html">7月 5 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/js-city-select.html">js封装地区联动</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/js-city-select.html">js封装地区联动</a></h1>
+        
+      
     </header>
     <div class="entry">
       
-        <p>同上一个demo（<a href="http://www.libiao.name/js-paging-2.html" title="简单js分页（2）" target="_blank">简单js分页</a>）一样，原型和构造的结合，时间较短，写的比较粗糙，但基本够用了。<br><a href="http://www.libiao.name/wp-content/_uploads/2012/07/地区联动.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2012/07/地区联动.png" alt="地区联动" title="地区联动"></a></p>
+        <p>同上一个demo（<a href="http://www.libiao.name/js-paging-2.html" title="简单js分页（2）" target="_blank">简单js分页</a>）一样，原型和构造的结合，时间较短，写的比较粗糙，但基本够用了。</p>
+<img src='/_uploads/2012/07/地区联动.png?1387463302831' />
+
+
 <h3>特性</h3>
 <ol>
 <li>支持同一页面多个插入</li>
 <li>支持2级或3级联动</li>
 <li>插入方法简单，一个new，生成实例就可以了</li>
-<li>关于初始值给定，后续有需求可以加上<br>demo地址：<a href="http://www.libiao.name/demo/city-select/demo.html" title="地区联动" target="_blank">地区联动</a></li>
+<li>关于初始值给定，后续有需求可以加上</li>
 </ol>
+<p>demo地址：<a href="http://www.libiao.name/demo/city-select/demo.html" title="地区联动" target="_blank">地区联动</a></p>
 
       
     </div>
@@ -215,6 +255,8 @@
 </article>
 
 
+
+
   
     <article class="post">
   
@@ -225,26 +267,187 @@
         <time datetime="2012-07-01T14:31:58.000Z"><a href="/2012/js-paging-2.html">7月 1 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/js-paging-2.html">简单js分页（2）</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/js-paging-2.html">简单js分页（2）</a></h1>
+        
+      
     </header>
     <div class="entry">
       
-        <p>之前不久写了一篇《<a href="http://www.libiao.name/js-paging.html" target="_blank">简单js分页</a>》，但后来发现在项目中不够试用，当一个页面需要插入多个分页的时候就不能够胜任，于是就有了这一篇</p>
+        <p>之前不久写了一篇《<a href="http://www.libiao.name/2012/js-paging.html" target="_blank">简单js分页</a>》，但后来发现在项目中不够试用，当一个页面需要插入多个分页的时候就不能够胜任，于是就有了这一篇</p>
 <p>简单说明下源码</p>
-<script type="text/javascript" src="https://gist.github.com/4177697.js?file=js-page.js"></script>
+<figure class="highlight lang-js"><figcaption><span>js-paging.js</span><a href="downloads/code/js-paging.js">download</a></figcaption><div class="box"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+</pre></td><td class="code"><pre><span class="function"><span class="keyword">function</span> <span class="title">PageNav</span><span class="params">(args)</span> {</span>
+    <span class="keyword">this</span>.container = args.container;
+    <span class="keyword">this</span>.perNumber = args.perNumber, <span class="keyword">this</span>.totalNumber = args.totalNumber;
+    <span class="keyword">this</span>.totalPage = Math.ceil(<span class="keyword">this</span>.totalNumber / <span class="keyword">this</span>.perNumber);
+    <span class="keyword">this</span>.callBack = args.callBack;
+    <span class="keyword">this</span>.cCount = <span class="number">2</span>;
+    <span class="keyword">this</span>.curPage = args.curPage || <span class="number">1</span>;
+    <span class="keyword">if</span>(<span class="keyword">this</span>.container &amp;&amp; <span class="keyword">this</span>.perNumber &amp;&amp; <span class="keyword">this</span>.totalNumber) {
+        <span class="keyword">this</span>.setPage();
+    }
+}
+PageNav.prototype = {
+    constructor: PageNav,
+    setPage: <span class="keyword">function</span>() {
+        <span class="keyword">var</span> outstr = <span class="string">''</span>;
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage == <span class="number">1</span>) {
+            outstr = outstr + <span class="string">"&lt;a class='pre disabled' href='javascript:void(0)'&gt;&amp;laquo;&lt;/a&gt;"</span>;
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage &gt; <span class="number">1</span>) {
+            <span class="keyword">var</span> pre = <span class="keyword">this</span>.curPage - <span class="number">1</span>;
+            outstr = outstr + <span class="keyword">this</span>.setHtml(pre, <span class="string">'&amp;laquo;'</span>);
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage &gt; <span class="keyword">this</span>.cCount + <span class="number">1</span>) {
+            outstr = outstr + <span class="keyword">this</span>.setHtml(<span class="number">1</span>, <span class="number">1</span>);
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage &gt; <span class="keyword">this</span>.cCount + <span class="number">2</span>) {
+            outstr = outstr + <span class="string">"&lt;span&gt;...&lt;/span&gt;"</span>;
+        }
+        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="keyword">this</span>.curPage - <span class="keyword">this</span>.cCount; i &lt;= <span class="keyword">this</span>.curPage + <span class="keyword">this</span>.cCount; i++) {
+            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; i &lt;= <span class="keyword">this</span>.totalPage) {
+                outstr = outstr + (i == <span class="keyword">this</span>.curPage ? <span class="string">"&lt;strong class='current'&gt;"</span> + i + <span class="string">"&lt;/strong&gt;"</span> : <span class="keyword">this</span>.setHtml(i, i));
+            }
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage &lt; <span class="keyword">this</span>.totalPage - <span class="keyword">this</span>.cCount - <span class="number">1</span>) {
+            outstr = outstr + <span class="string">"&lt;span&gt;...&lt;/span&gt;"</span>;
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage &lt; <span class="keyword">this</span>.totalPage - <span class="keyword">this</span>.cCount) {
+            outstr = outstr + <span class="keyword">this</span>.setHtml(<span class="keyword">this</span>.totalPage, <span class="keyword">this</span>.totalPage);
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage &lt; <span class="keyword">this</span>.totalPage) {
+            <span class="keyword">var</span> nxt = <span class="keyword">this</span>.curPage + <span class="number">1</span>;
+            outstr = outstr + <span class="keyword">this</span>.setHtml(nxt, <span class="string">'&amp;raquo;'</span>);
+        }
+        <span class="keyword">if</span>(<span class="keyword">this</span>.curPage == <span class="keyword">this</span>.totalPage) {
+            outstr = outstr + <span class="string">"&lt;a class='nxt disabled' href='javascript:void(0)'&gt;&amp;raquo;&lt;/a&gt;"</span>;
+        }
+        <span class="keyword">this</span>.container.html(outstr);
+        <span class="keyword">this</span>.bind();
+        <span class="keyword">return</span> <span class="keyword">this</span>;
+    },
+    bind: <span class="keyword">function</span>() {
+        <span class="keyword">var</span> that = <span class="keyword">this</span>;
+        <span class="keyword">this</span>.container.find(<span class="string">'a[data-page]'</span>).click(<span class="keyword">function</span>() {
+            that.curPage = parseInt($(<span class="keyword">this</span>).attr(<span class="string">"data-page"</span>));
+            that.setPage().callBack(that.curPage);
+        });
+    },
+    setHtml: <span class="keyword">function</span>(page, text) {
+        <span class="keyword">return</span> <span class="string">'&lt;a data-page="'</span> + page + <span class="string">'" href="javascript:void(0)" title="第'</span> + page + <span class="string">'页"&gt;'</span> + text + <span class="string">'&lt;/a&gt;'</span>;
+    }
+}
+
+
+<span class="comment">//调用</span>
+<span class="keyword">var</span> pageNav = <span class="keyword">new</span> PageNav({
+    container: $(<span class="string">'#pgt_invitation'</span>),
+    perNumber: <span class="number">4</span>,
+    totalNumber: <span class="number">30</span>,
+    callBack: <span class="keyword">function</span>(page) {
+        window.console.log &amp;&amp; console.log(page);
+    }
+});
+
+</pre></td></tr></table></div></figure>
+
 
 <p>使用构造函数来存储变量，原型来存放方法，最大限度减少内存占用，new实例的时候参数采用对象传入参数，减少输入错误，</p>
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">fenye1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PageNav</span><span class="p">({</span><br>    <span class="nx">container</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#pgt&gt;div&#39;</span><span class="p">),</span><br>    <span class="nx">perNumber</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span><br>    <span class="nx">totalNumber</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span><br>    <span class="nx">callBack</span><span class="o">:</span> <span class="nx">getInfo</span><br><span class="p">});</span><br></pre></div>
+<figure class="highlight lang-js"><div class="box"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="keyword">var</span> fenye1 = <span class="keyword">new</span> PageNav({
+    container: $(<span class="string">'#pgt&gt;div'</span>),
+    perNumber: <span class="number">5</span>,
+    totalNumber: <span class="number">100</span>,
+    callBack: getInfo
+});
+<span class="comment">// container： 插入分页的标签</span>
+<span class="comment">// perNumber: 每页数目</span>
+<span class="comment">// totalNumber: 项目总数</span>
+<span class="comment">// callBack： 回调函数，会默认返回page</span>
+</pre></td></tr></table></div></figure>
 
-<blockquote>
-<p>container： 插入分页的标签</p>
-<p>perNumber: 每页数目</p>
-<p>totalNumber: 项目总数</p>
-<p>callBack： 回调函数，会默认返回page</p>
-</blockquote>
 <p>具体请看demo： <a href="http://www.libiao.name/demo/pagenav/demo.htm" target="_blank">js分页</a></p>
 
       
@@ -260,6 +463,8 @@
 </article>
 
 
+
+
   
     <article class="post">
   
@@ -270,17 +475,20 @@
         <time datetime="2012-05-05T17:15:54.000Z"><a href="/2012/js-paging.html">5月 6 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/js-paging.html">简单js分页</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/js-paging.html">简单js分页</a></h1>
+        
+      
     </header>
     <div class="entry">
       
         <p>最近的《暗恋通知书》项目中写的，觉得可能以后也会用到，就提取了一下，先上图</p>
-<p><a href="http://www.libiao.name/wp-content/_uploads/2012/05/js-paging2.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2012/05/js-paging2.png" alt="js-paging" title="js-paging2"></a></p>
-<p><a href="http://www.libiao.name/wp-content/_uploads/2012/05/js-paging3.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2012/05/js-paging3.png" alt="" title="js-paging3"></a></p>
-<p><a href="http://www.libiao.name/wp-content/_uploads/2012/05/js-paging.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2012/05/js-paging.png" alt="" title="js-paging"></a></p>
+<p><img src='/_uploads/2012/05/js-paging2.png?1387463302831' /><br></p>
+
+<p><img src='/_uploads/2012/05/js-paging3.png?1387463302831' /><br></p>
+
+<p><img src='/_uploads/2012/05/js-paging.png?1387463302831' /><br></p>
+
 <p>代码挺简单的，DEMO请移步：<a href="http://www.libiao.name/demo/js-paging/demo.htm" title="js-分页" target="_blank"> 点此查看</a></p>
 
       
@@ -296,6 +504,8 @@
 </article>
 
 
+
+
   
     <article class="post">
   
@@ -306,17 +516,21 @@
         <time datetime="2012-03-02T08:58:00.000Z"><a href="/2012/moreemaillogin.html">3月 2 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/moreemaillogin.html">多邮箱登录（仿hao123）</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/moreemaillogin.html">多邮箱登录（仿hao123）</a></h1>
+        
+      
     </header>
     <div class="entry">
       
         <p>之前一个未完工的项目中写的，现单独提取出来，上效果图：</p>
-<p><a href="http://www.libiao.name/wp-content/_uploads/2012/03/多邮箱登录（仿hao123）.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2012/03/多邮箱登录（仿hao123）.png" alt="多邮箱登录（仿hao123）" title="多邮箱登录（仿hao123）"></a></p>
+<img src='/_uploads/2012/03/多邮箱登录（仿hao123）.png?1387463302831' title='多邮箱登录（仿hao123）' />
+
+
 <p>数据是单独提取出来了，通过动态加入的：</p>
-<p><a href="http://www.libiao.name/wp-content/_uploads/2012/03/maildata.png" target="_blank"><img src="http://www.libiao.name/wp-content/_uploads/2012/03/maildata.png" alt="maildata" title="maildata"></a></p>
+<img src='/_uploads/2012/03/maildata.png?1387463302831' title='maildata' />
+
+
 <p>以前几乎没弄过这样的效果，很是艰难，不过总算完成了！！！</p>
 <p>预览：<a href="http://www.libiao.name/demo/MoreEmailLogin/demo.htm" title="多邮箱登录（仿hao123）demo" target="_blank">点击前往</a>    <a href="http://biaocodehub.googlecode.com/files/MoreEmailLogin.7z" title="moreemaillogin" target="_blank">点击下载</a></p>
 
@@ -333,6 +547,8 @@
 </article>
 
 
+
+
   
     <article class="post">
   
@@ -343,24 +559,24 @@
         <time datetime="2012-02-19T13:55:56.000Z"><a href="/2012/sublime-text-2-zencoding.html">2月 19 2012</a></time>
       
       
-  
-    <h1 class="title"><a href="/2012/sublime-text-2-zencoding.html">sublime text 2安装ZenCoding后设置其快捷键</a></h1>
-  
-
+        
+          <h1 class="title"><a href="/2012/sublime-text-2-zencoding.html">sublime text 2安装ZenCoding后设置其快捷键</a></h1>
+        
+      
     </header>
     <div class="entry">
       
         <p>关于如何安装插件请移步<a href="http://www.jankerli.com/?p=1359" title="关于使用Sublime Text 2的那些事儿" target="_blank">《关于使用Sublime Text 2的那些事儿》</a></p>
 <p>由于在notepad++里面的zencoding快捷键是设置成ctrl+e，所以在sublime里边也想要改过来（默认是tab），方法如下</p>
-<img src='//libiao.qiniudn.com/_uploads/2012/02/sublime-text-2-zencoding.png?1386514974359' />
+<img src='/_uploads/2012/02/sublime-text-2-zencoding.png?1387463302831' />
 
 
 <p>菜单-preferences =&gt; key bindings - default =&gt; 搜寻tab</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
+<figure class="highlight"><div class="box"><table><tr><td class="gutter"><pre>1
 2
 </pre></td><td class="code"><pre>{ <span class="string">"keys"</span>: [<span class="string">"tab"</span>], <span class="string">"command"</span>: <span class="string">"insert_best_completion"</span>, <span class="string">"args"</span>: {<span class="string">"default"</span>: <span class="string">"\t"</span>, <span class="string">"exact"</span>: <span class="literal">true</span>} },
 { <span class="string">"keys"</span>: [<span class="string">"tab"</span>], <span class="string">"command"</span>: <span class="string">"insert_best_completion"</span>, <span class="string">"args"</span>: {<span class="string">"default"</span>: <span class="string">"\t"</span>, <span class="string">"exact"</span>: <span class="literal">false</span>},
-</pre></td></tr></table></figure>
+</pre></td></tr></table></div></figure>
 
 
 <p>将第二个tab替换成你想要设置的快捷键，注意不要与其他冲突…</p>
@@ -378,498 +594,39 @@
 </article>
 
 
+
+
   
 
   <nav id="pagination">
+
+  
+
   
   
-  <div class="clearfix"></div>
+
+  
 </nav>
-</div></div>
-    <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:libiao.name">
-  </form>
-</div>
-
-  
-<div class="widget tag">
-  <h3 class="title">分类</h3>
-  <ul class="entry">
-  
-    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
-  
-    <li><a href="/categories/Web生活/">Web生活</a><small>82</small></li>
-  
-    <li><a href="/categories/mac/Web生活/">Web生活</a><small>1</small></li>
-  
-    <li><a href="/categories/mac/">mac</a><small>1</small></li>
-  
-    <li><a href="/categories/前端开发/">前端开发</a><small>24</small></li>
-  
-    <li><a href="/categories/开发工具/">开发工具</a><small>5</small></li>
-  
-    <li><a href="/categories/移动开发/">移动开发</a><small>1</small></li>
-  
-    <li><a href="/categories/设计路上/">设计路上</a><small>3</small></li>
-  
-    <li><a href="/categories/软件应用/">软件应用</a><small>30</small></li>
-  
-    <li><a href="/categories/Web生活/软件应用/">软件应用</a><small>1</small></li>
-  
-    <li><a href="/categories/随笔/">随笔</a><small>7</small></li>
-  
-  </ul>
-</div>
 
 
-  
-<div class="widget tag">
-  <h3 class="title">标签</h3>
-  <ul class="entry">
-  
-    <li><a href="/tags/.net/">.net</a><small>1</small></li>
-  
-    <li><a href="/tags/000webhost/">000webhost</a><small>1</small></li>
-  
-    <li><a href="/tags/1kb文件夹快捷方式病毒/">1kb文件夹快捷方式病毒</a><small>1</small></li>
-  
-    <li><a href="/tags/360/">360</a><small>2</small></li>
-  
-    <li><a href="/tags/3rd/">3rd</a><small>1</small></li>
-  
-    <li><a href="/tags/960_Grid/">960_Grid</a><small>1</small></li>
-  
-    <li><a href="/tags/Aptana Studio/">Aptana Studio</a><small>1</small></li>
-  
-    <li><a href="/tags/A记录/">A记录</a><small>1</small></li>
-  
-    <li><a href="/tags/B2B/">B2B</a><small>1</small></li>
-  
-    <li><a href="/tags/Beyond compare/">Beyond compare</a><small>1</small></li>
-  
-    <li><a href="/tags/Bloxorz/">Bloxorz</a><small>1</small></li>
-  
-    <li><a href="/tags/Box.net/">Box.net</a><small>1</small></li>
-  
-    <li><a href="/tags/CSS缩写/">CSS缩写</a><small>2</small></li>
-  
-    <li><a href="/tags/Css3/">Css3</a><small>1</small></li>
-  
-    <li><a href="/tags/Discuz/">Discuz</a><small>2</small></li>
-  
-    <li><a href="/tags/ERP/">ERP</a><small>1</small></li>
-  
-    <li><a href="/tags/EXPLORE.EXE错误/">EXPLORE.EXE错误</a><small>1</small></li>
-  
-    <li><a href="/tags/Emmet/">Emmet</a><small>1</small></li>
-  
-    <li><a href="/tags/FileSystem API/">FileSystem API</a><small>1</small></li>
-  
-    <li><a href="/tags/GHOST/">GHOST</a><small>2</small></li>
-  
-    <li><a href="/tags/GIF/">GIF</a><small>1</small></li>
-  
-    <li><a href="/tags/Go 2 proxy/">Go 2 proxy</a><small>1</small></li>
-  
-    <li><a href="/tags/Google/">Google</a><small>5</small></li>
-  
-    <li><a href="/tags/Google Analytics/">Google Analytics</a><small>1</small></li>
-  
-    <li><a href="/tags/Google Picasa/">Google Picasa</a><small>2</small></li>
-  
-    <li><a href="/tags/Google chrome 世界之窗/">Google chrome 世界之窗</a><small>1</small></li>
-  
-    <li><a href="/tags/Google 中国，Google香港/">Google 中国，Google香港</a><small>1</small></li>
-  
-    <li><a href="/tags/Google翻译/">Google翻译</a><small>1</small></li>
-  
-    <li><a href="/tags/Google账户/">Google账户</a><small>1</small></li>
-  
-    <li><a href="/tags/Grunt/">Grunt</a><small>1</small></li>
-  
-    <li><a href="/tags/IE/">IE</a><small>5</small></li>
-  
-    <li><a href="/tags/IE 右键/">IE 右键</a><small>1</small></li>
-  
-    <li><a href="/tags/IE6/">IE6</a><small>1</small></li>
-  
-    <li><a href="/tags/IE8/">IE8</a><small>1</small></li>
-  
-    <li><a href="/tags/IIS/">IIS</a><small>2</small></li>
-  
-    <li><a href="/tags/IIS Server Application Error/">IIS Server Application Error</a><small>1</small></li>
-  
-    <li><a href="/tags/IIS，localhost/">IIS，localhost</a><small>1</small></li>
-  
-    <li><a href="/tags/JPEG/">JPEG</a><small>1</small></li>
-  
-    <li><a href="/tags/Javascript/">Javascript</a><small>5</small></li>
-  
-    <li><a href="/tags/Nokia/">Nokia</a><small>2</small></li>
-  
-    <li><a href="/tags/Opera/">Opera</a><small>1</small></li>
-  
-    <li><a href="/tags/Opera，使用感受/">Opera，使用感受</a><small>1</small></li>
-  
-    <li><a href="/tags/PNG/">PNG</a><small>1</small></li>
-  
-    <li><a href="/tags/Picasa3/">Picasa3</a><small>1</small></li>
-  
-    <li><a href="/tags/QQ/">QQ</a><small>6</small></li>
-  
-    <li><a href="/tags/QQradio网络收音机/">QQradio网络收音机</a><small>1</small></li>
-  
-    <li><a href="/tags/S60/">S60</a><small>1</small></li>
-  
-    <li><a href="/tags/SAE/">SAE</a><small>1</small></li>
-  
-    <li><a href="/tags/SSH/">SSH</a><small>1</small></li>
-  
-    <li><a href="/tags/SublimeHighlight/">SublimeHighlight</a><small>1</small></li>
-  
-    <li><a href="/tags/Theme/">Theme</a><small>1</small></li>
-  
-    <li><a href="/tags/U盘 病毒/">U盘 病毒</a><small>1</small></li>
-  
-    <li><a href="/tags/U盘，通用卷，方法/">U盘，通用卷，方法</a><small>1</small></li>
-  
-    <li><a href="/tags/Weinre/">Weinre</a><small>1</small></li>
-  
-    <li><a href="/tags/WordPress/">WordPress</a><small>4</small></li>
-  
-    <li><a href="/tags/Zen Coding/">Zen Coding</a><small>1</small></li>
-  
-    <li><a href="/tags/adobo flash/">adobo flash</a><small>1</small></li>
-  
-    <li><a href="/tags/ajax/">ajax</a><small>1</small></li>
-  
-    <li><a href="/tags/anyrouter/">anyrouter</a><small>1</small></li>
-  
-    <li><a href="/tags/aptana/">aptana</a><small>1</small></li>
-  
-    <li><a href="/tags/autoproxy/">autoproxy</a><small>1</small></li>
-  
-    <li><a href="/tags/bat/">bat</a><small>1</small></li>
-  
-    <li><a href="/tags/blockquote/">blockquote</a><small>1</small></li>
-  
-    <li><a href="/tags/blog/">blog</a><small>1</small></li>
-  
-    <li><a href="/tags/chrome/">chrome</a><small>1</small></li>
-  
-    <li><a href="/tags/clear/">clear</a><small>1</small></li>
-  
-    <li><a href="/tags/clicki/">clicki</a><small>1</small></li>
-  
-    <li><a href="/tags/cname/">cname</a><small>1</small></li>
-  
-    <li><a href="/tags/css/">css</a><small>4</small></li>
-  
-    <li><a href="/tags/css压缩/">css压缩</a><small>1</small></li>
-  
-    <li><a href="/tags/dbank/">dbank</a><small>1</small></li>
-  
-    <li><a href="/tags/dedeampz/">dedeampz</a><small>1</small></li>
-  
-    <li><a href="/tags/div/">div</a><small>1</small></li>
-  
-    <li><a href="/tags/dns/">dns</a><small>1</small></li>
-  
-    <li><a href="/tags/dr.com/">dr.com</a><small>1</small></li>
-  
-    <li><a href="/tags/dreamweaver/">dreamweaver</a><small>2</small></li>
-  
-    <li><a href="/tags/firefox/">firefox</a><small>4</small></li>
-  
-    <li><a href="/tags/git/">git</a><small>1</small></li>
-  
-    <li><a href="/tags/hosts/">hosts</a><small>1</small></li>
-  
-    <li><a href="/tags/html5/">html5</a><small>1</small></li>
-  
-    <li><a href="/tags/ie，桌面/">ie，桌面</a><small>1</small></li>
-  
-    <li><a href="/tags/iis，server error/">iis，server error</a><small>1</small></li>
-  
-    <li><a href="/tags/jquery/">jquery</a><small>5</small></li>
-  
-    <li><a href="/tags/js/">js</a><small>2</small></li>
-  
-    <li><a href="/tags/js文件/">js文件</a><small>1</small></li>
-  
-    <li><a href="/tags/mac/">mac</a><small>2</small></li>
-  
-    <li><a href="/tags/margin:0 auto 不居中问题 DOCTYPE/">margin:0 auto 不居中问题 DOCTYPE</a><small>1</small></li>
-  
-    <li><a href="/tags/msn/">msn</a><small>1</small></li>
-  
-    <li><a href="/tags/mx/">mx</a><small>1</small></li>
-  
-    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
-  
-    <li><a href="/tags/notepad/">notepad</a><small>1</small></li>
-  
-    <li><a href="/tags/p2p/">p2p</a><small>1</small></li>
-  
-    <li><a href="/tags/phone/">phone</a><small>1</small></li>
-  
-    <li><a href="/tags/phonegap/">phonegap</a><small>1</small></li>
-  
-    <li><a href="/tags/php/">php</a><small>1</small></li>
-  
-    <li><a href="/tags/ps/">ps</a><small>3</small></li>
-  
-    <li><a href="/tags/sata/">sata</a><small>1</small></li>
-  
-    <li><a href="/tags/simple tag 1.8/">simple tag 1.8</a><small>1</small></li>
-  
-    <li><a href="/tags/skydrive google docs/">skydrive google docs</a><small>1</small></li>
-  
-    <li><a href="/tags/sublime text/">sublime text</a><small>2</small></li>
-  
-    <li><a href="/tags/sublime text 2/">sublime text 2</a><small>1</small></li>
-  
-    <li><a href="/tags/sugarsync/">sugarsync</a><small>1</small></li>
-  
-    <li><a href="/tags/terminal/">terminal</a><small>1</small></li>
-  
-    <li><a href="/tags/twitter Facebook/">twitter Facebook</a><small>1</small></li>
-  
-    <li><a href="/tags/unit/">unit</a><small>1</small></li>
-  
-    <li><a href="/tags/webbyps/">webbyps</a><small>1</small></li>
-  
-    <li><a href="/tags/windows/">windows</a><small>1</small></li>
-  
-    <li><a href="/tags/word/">word</a><small>2</small></li>
-  
-    <li><a href="/tags/word 图片 大小 批量/">word 图片 大小 批量</a><small>1</small></li>
-  
-    <li><a href="/tags/word，图片，批量保存/">word，图片，批量保存</a><small>1</small></li>
-  
-    <li><a href="/tags/written/">written</a><small>1</small></li>
-  
-    <li><a href="/tags/xp/">xp</a><small>1</small></li>
-  
-    <li><a href="/tags/xp系统，默认字体，下载/">xp系统，默认字体，下载</a><small>1</small></li>
-  
-    <li><a href="/tags/zen conding/">zen conding</a><small>2</small></li>
-  
-    <li><a href="/tags/两端对齐，li/">两端对齐，li</a><small>1</small></li>
-  
-    <li><a href="/tags/主题/">主题</a><small>1</small></li>
-  
-    <li><a href="/tags/代理/">代理</a><small>1</small></li>
-  
-    <li><a href="/tags/优化/">优化</a><small>1</small></li>
-  
-    <li><a href="/tags/作品/">作品</a><small>2</small></li>
-  
-    <li><a href="/tags/使用jquery/">使用jquery</a><small>1</small></li>
-  
-    <li><a href="/tags/内存不能为read/">内存不能为read</a><small>1</small></li>
-  
-    <li><a href="/tags/刷新/">刷新</a><small>1</small></li>
-  
-    <li><a href="/tags/加密/">加密</a><small>1</small></li>
-  
-    <li><a href="/tags/动易/">动易</a><small>1</small></li>
-  
-    <li><a href="/tags/博客/">博客</a><small>1</small></li>
-  
-    <li><a href="/tags/印度阿三，韩国棒子，俄国老毛子，越南猴子，由来/">印度阿三，韩国棒子，俄国老毛子，越南猴子，由来</a><small>1</small></li>
-  
-    <li><a href="/tags/原型/">原型</a><small>2</small></li>
-  
-    <li><a href="/tags/回车符，换行符/">回车符，换行符</a><small>1</small></li>
-  
-    <li><a href="/tags/地区联动/">地区联动</a><small>1</small></li>
-  
-    <li><a href="/tags/增加流量/">增加流量</a><small>1</small></li>
-  
-    <li><a href="/tags/声卡驱动，耳麦/">声卡驱动，耳麦</a><small>1</small></li>
-  
-    <li><a href="/tags/外汇 笑话/">外汇 笑话</a><small>1</small></li>
-  
-    <li><a href="/tags/外链/">外链</a><small>1</small></li>
-  
-    <li><a href="/tags/多邮箱登录/">多邮箱登录</a><small>1</small></li>
-  
-    <li><a href="/tags/头像缓存/">头像缓存</a><small>1</small></li>
-  
-    <li><a href="/tags/奔腾酷睿和酷睿2/">奔腾酷睿和酷睿2</a><small>1</small></li>
-  
-    <li><a href="/tags/如何破解密码/">如何破解密码</a><small>1</small></li>
-  
-    <li><a href="/tags/字体/">字体</a><small>1</small></li>
-  
-    <li><a href="/tags/字体，优先级，字体大小，css，网页布局/">字体，优先级，字体大小，css，网页布局</a><small>1</small></li>
-  
-    <li><a href="/tags/安全模式/">安全模式</a><small>1</small></li>
-  
-    <li><a href="/tags/安装/">安装</a><small>1</small></li>
-  
-    <li><a href="/tags/完美/">完美</a><small>2</small></li>
-  
-    <li><a href="/tags/实用/">实用</a><small>1</small></li>
-  
-    <li><a href="/tags/宽带，带宽/">宽带，带宽</a><small>1</small></li>
-  
-    <li><a href="/tags/小说，古龙，诸葛青云，独孤残红，合集，下载/">小说，古龙，诸葛青云，独孤残红，合集，下载</a><small>1</small></li>
-  
-    <li><a href="/tags/幽默 网语/">幽默 网语</a><small>1</small></li>
-  
-    <li><a href="/tags/开发工具/">开发工具</a><small>1</small></li>
-  
-    <li><a href="/tags/微软雅黑/">微软雅黑</a><small>1</small></li>
-  
-    <li><a href="/tags/情书/">情书</a><small>1</small></li>
-  
-    <li><a href="/tags/惠普/">惠普</a><small>3</small></li>
-  
-    <li><a href="/tags/我的电脑打不开，我的电脑/">我的电脑打不开，我的电脑</a><small>1</small></li>
-  
-    <li><a href="/tags/手机/">手机</a><small>2</small></li>
-  
-    <li><a href="/tags/手机 充电 电池/">手机 充电 电池</a><small>1</small></li>
-  
-    <li><a href="/tags/扩容/">扩容</a><small>1</small></li>
-  
-    <li><a href="/tags/插件/">插件</a><small>2</small></li>
-  
-    <li><a href="/tags/收藏夹/">收藏夹</a><small>1</small></li>
-  
-    <li><a href="/tags/教程/">教程</a><small>1</small></li>
-  
-    <li><a href="/tags/整理/">整理</a><small>1</small></li>
-  
-    <li><a href="/tags/文件关联，photoshop/">文件关联，photoshop</a><small>1</small></li>
-  
-    <li><a href="/tags/文件，重命名/">文件，重命名</a><small>1</small></li>
-  
-    <li><a href="/tags/最/">最</a><small>1</small></li>
-  
-    <li><a href="/tags/最新评论/">最新评论</a><small>1</small></li>
-  
-    <li><a href="/tags/本地测试/">本地测试</a><small>1</small></li>
-  
-    <li><a href="/tags/杀毒软件/">杀毒软件</a><small>1</small></li>
-  
-    <li><a href="/tags/权重/">权重</a><small>1</small></li>
-  
-    <li><a href="/tags/来电通/">来电通</a><small>2</small></li>
-  
-    <li><a href="/tags/构造/">构造</a><small>1</small></li>
-  
-    <li><a href="/tags/构造函数/">构造函数</a><small>1</small></li>
-  
-    <li><a href="/tags/桌面/">桌面</a><small>1</small></li>
-  
-    <li><a href="/tags/楼市春晚/">楼市春晚</a><small>1</small></li>
-  
-    <li><a href="/tags/洞庭湖 鄱阳湖 第一大/">洞庭湖 鄱阳湖 第一大</a><small>1</small></li>
-  
-    <li><a href="/tags/流量/">流量</a><small>1</small></li>
-  
-    <li><a href="/tags/浏览器 CSS BUG 兼容 汇总/">浏览器 CSS BUG 兼容 汇总</a><small>1</small></li>
-  
-    <li><a href="/tags/淘宝/">淘宝</a><small>1</small></li>
-  
-    <li><a href="/tags/深度专用链转换器/">深度专用链转换器</a><small>1</small></li>
-  
-    <li><a href="/tags/清除浮动/">清除浮动</a><small>1</small></li>
-  
-    <li><a href="/tags/游戏/">游戏</a><small>1</small></li>
-  
-    <li><a href="/tags/火狐/">火狐</a><small>4</small></li>
-  
-    <li><a href="/tags/火狐flash播发器不能用/">火狐flash播发器不能用</a><small>1</small></li>
-  
-    <li><a href="/tags/火狐flash播放器插件缺失/">火狐flash播放器插件缺失</a><small>1</small></li>
-  
-    <li><a href="/tags/版本/">版本</a><small>1</small></li>
-  
-    <li><a href="/tags/电脑/">电脑</a><small>1</small></li>
-  
-    <li><a href="/tags/百度/">百度</a><small>1</small></li>
-  
-    <li><a href="/tags/破解 电子书/">破解 电子书</a><small>1</small></li>
-  
-    <li><a href="/tags/移动开发/">移动开发</a><small>1</small></li>
-  
-    <li><a href="/tags/空行/">空行</a><small>1</small></li>
-  
-    <li><a href="/tags/笔记本，应用，截屏，快捷键/">笔记本，应用，截屏，快捷键</a><small>1</small></li>
-  
-    <li><a href="/tags/精美质感播放器/">精美质感播放器</a><small>1</small></li>
-  
-    <li><a href="/tags/系统/">系统</a><small>4</small></li>
-  
-    <li><a href="/tags/系统备份和恢复，惠普/">系统备份和恢复，惠普</a><small>1</small></li>
-  
-    <li><a href="/tags/网卡未初始化/">网卡未初始化</a><small>1</small></li>
-  
-    <li><a href="/tags/网络硬盘/">网络硬盘</a><small>1</small></li>
-  
-    <li><a href="/tags/翻墙/">翻墙</a><small>2</small></li>
-  
-    <li><a href="/tags/英语/">英语</a><small>1</small></li>
-  
-    <li><a href="/tags/认领博客，QQ/">认领博客，QQ</a><small>1</small></li>
-  
-    <li><a href="/tags/误区/">误区</a><small>1</small></li>
-  
-    <li><a href="/tags/读大学究竟读什么，大学/">读大学究竟读什么，大学</a><small>1</small></li>
-  
-    <li><a href="/tags/软件/">软件</a><small>1</small></li>
-  
-    <li><a href="/tags/过滤/">过滤</a><small>1</small></li>
-  
-    <li><a href="/tags/邀请码/">邀请码</a><small>1</small></li>
-  
-    <li><a href="/tags/邮箱/">邮箱</a><small>2</small></li>
-  
-    <li><a href="/tags/邮箱容量/">邮箱容量</a><small>1</small></li>
-  
-    <li><a href="/tags/配置/">配置</a><small>2</small></li>
-  
-    <li><a href="/tags/重启/">重启</a><small>1</small></li>
-  
-    <li><a href="/tags/铝合金门/">铝合金门</a><small>1</small></li>
-  
-    <li><a href="/tags/附件大小/">附件大小</a><small>1</small></li>
-  
-    <li><a href="/tags/隐藏/">隐藏</a><small>1</small></li>
-  
-    <li><a href="/tags/驱动/">驱动</a><small>3</small></li>
-  
-    <li><a href="/tags/高亮/">高亮</a><small>1</small></li>
-  
-    <li><a href="/tags/高度自适应/">高度自适应</a><small>1</small></li>
-  
-  </ul>
-</div>
 
-</aside>
-    <div class="clearfix"></div>
-  </div>
-  <footer id="footer" class="inner"><div class="alignleft">
+
+    </div>
+
+    <footer id="colophon" class="site_footer" role="footer">
   
   &copy; 2013 biao166
   
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
 
 <script type="text/javascript">
 var disqus_shortname = 'libiao';
-
 (function(){
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
@@ -878,6 +635,9 @@ var disqus_shortname = 'libiao';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
+
+
+
 
 
 

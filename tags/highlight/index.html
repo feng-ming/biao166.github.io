@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>highlight | LiBiao's Blog</title>
+  <meta name="author" content="biao166">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="LiBiao's Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="LiBiao's Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+<body>
+    <header id="masthead" class="" role="banner">
+    <div class="wrap">
+        <hgroup>
+        <h1 id="site_title"><a href="/">LiBiao's Blog</a></h1>
+        <h2 id="site_description"><a href="/">奔跑于泥地中为梦想</a></h2>
+      </hgroup>
+
+      <nav id="site_nav" role="navigation">
+        <ul>
+          
+            <li><a href="/">Home</a></li>
+          
+            <li><a href="/archives">Archives</a></li>
+          
+        </ul>
+      </nav>
+
+      <div class="search">
+  <form role="search" method="get" class="search_form" action="//google.com/search" accept-charset="utf-8" target="_blank">
+    <label>
+      <span class="screen_reader_text">搜索：</span>
+      <input type="search" class="search_field" placeholder="搜索…" value="" name="q" title="搜索" results="0">
+      <input type="hidden" name="q" value="site:libiao.name">
+    </label>
+    <input type="submit" class="search_submit" value="搜索">
+  </form>
+</div>
+
+    </div>
+</header>
+
+
+    <div id="content" class="wrap">
+        
+<h2 class="archive-title tag">highlight</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2013-04-04T17:07:25.000Z"><a href="/2013/copy-as-highlight-by-html.html">4月 5 2013</a></time>
+      
+      
+        
+          <h1 class="title"><a href="/2013/copy-as-highlight-by-html.html">SublimeHighlight 实现博客代码高亮</a></h1>
+        
+      
+    </header>
+    <div class="entry">
+      
+        <p>最终效果预览</p>
+<figure class="highlight lang-css"><div class="box"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="tag">blockquote</span>, <span class="tag">q</span> <span class="rules">{<span class="rule"><span class="attribute">quotes</span>:<span class="value"> none;</span></span><span class="rule">}</span></span>
+<span class="tag">blockquote</span><span class="pseudo">:before</span>,
+<span class="tag">blockquote</span><span class="pseudo">:after</span>,
+<span class="tag">q</span><span class="pseudo">:before</span>,
+<span class="tag">q</span><span class="pseudo">:after</span> <span class="rules">{<span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">''</span>;</span></span> <span class="rule"><span class="attribute">content</span>:<span class="value"> none;</span></span><span class="rule">}</span></span>
+</pre></td></tr></table></div></figure>
+
+<p><strong>前言</strong>：对于一段没有高亮和缩进的代码，我相信你是没有兴趣去仔细研读的，同样在我们的技术博文中，经常需要插入各种code，你会选择何种方式？</p>
+<p>比如在 wordpress 中，常用的高亮插件有 SyntaxHighlighter、Syntax Highlighter、Google Syntax Highlighter for WordPress 等等，也有不借助插件比如 code2html，CodeRenderUnmi、代码发芽网等等。</p>
+<img src='/_uploads/2013/04/SyntaxHighlighter-Evolved.png?1387463302831' />
+
+
+<p>使用高亮插件的不足是会载入一大段 css 和 js 文件，且只有有限的主题，样式控制不方便，当然不适用插件的话更需要每次都需要打开在线网站或者软件。有没有一个既不需要借助上面的工具，而又能提供有效定制的方法呢？</p>
+<p>在 sublime text 编辑器的众多插件中我找到了 <a href="https://github.com/n1k0/SublimeHighlight/" title="SublimeHighlight" target="_blank"><strong>SublimeHighlight</strong></a> 这个插件，应该可以解决掉上面提出的问题.</p>
+<p>首先你需要安装 SublimeHighlight 插件，在 install package list 中是没有这个插件的，你可以选择 add Repository ,将 “<a href="https://github.com/n1k0/SublimeHighlight”添加进去，然后在" target="_blank">https://github.com/n1k0/SublimeHighlight”添加进去，然后在</a> Install Package, 或者通过终端进入 sublime text 的插件目录，什么？你不知道插件目录在哪里，通过 Preferences =》Browse Packages…,再查看地址栏，然后在终端 cd 到插件目录<br> <code>git clone https://github.com/n1k0/SublimeHighlight.git &#39;SublimeHighlight&#39;</code><br> 回车安装。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2013/copy-as-highlight-by-html.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  
+
+  <nav id="pagination">
+
+  
+
+  
+  
+
+  
+</nav>
+
+
+
+
+    </div>
+
+    <footer id="colophon" class="site_footer" role="footer">
+  
+  &copy; 2013 biao166
+  
+</footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'libiao';
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+</body>
+</html>
