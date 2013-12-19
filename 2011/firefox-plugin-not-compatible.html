@@ -86,22 +86,22 @@
 <p>无意中升级了Firefox 6,结果了几个插件不兼容了，所以就有了下文：</p>
 <h2>方法一、修改firefox的配置</h2>
 <p>在 Firefox地址栏输入“about:config&quot;，在随之弹出的页面中单击“我保证会小心”按钮，</p>
-<img src='/_uploads/2011/08/1.jpg?1387463776772' />
+<img src='/_uploads/2011/08/1.jpg?1387464605917' />
 
 
 <p>然后下面的列表任意处右击，从快捷菜单中选择“新 建→布尔”，<a id="more"></a></p>
-<img src='/_uploads/2011/08/2.jpg?1387463776772' />
+<img src='/_uploads/2011/08/2.jpg?1387464605917' />
 
 
 <p>在弹出的对话框中输入“extensions.checkCompatibility”，并将其值设置为“false”，</p>
 <p>再次新建一个名为 “extensions.checkUpdateSecurity”的布尔类型，并将其值同样设置为“false”，设置后可以暂时禁用 Firefox 3对附加组件的安全检查。</p>
-<img src='/_uploads/2011/08/3.jpg?1387463776772' />
+<img src='/_uploads/2011/08/3.jpg?1387464605917' />
 
 
 <p>退出并重新启动Firefox ，现在就可以顺利安装扩展了，其实绝大多数的扩展和插件都可以按照这个方法来处理。如果你新建后，想删除你新建的功能，是删不掉的，只能将其设置为true，我试了下，效果是一样的。</p>
 <h2>方法二、修改插件的文件</h2>
 <p>使用winrar压缩工具打开插件文件，</p>
-<img src='/_uploads/2011/08/4.jpg?1387463776772' />
+<img src='/_uploads/2011/08/4.jpg?1387464605917' />
 
 
 <p>双击install.rdf(或某个以.rdf为后缀的文件)文件(注意，不要将winrar关闭，否则会修改不成功)，</p>
@@ -118,7 +118,7 @@
 </blockquote>
 <p>反之如果你ff版本较高，就将&lt;em:maxVersion&gt;3.0.*&lt;/em:maxVersion&gt;修改得更高一点。</p>
 <p>保存，后会提示你将其更新到winrar压缩文件中，确定后就可以安装了。</p>
-<img src='/_uploads/2011/08/5.jpg?1387463776772' />
+<img src='/_uploads/2011/08/5.jpg?1387464605917' />
 
 
 <p>需要注意的是，不可以直接把所有文件解压出来修改rdf文件后再整体打包压缩，直接在压缩软件里用文本编辑器编辑修改。</p>
