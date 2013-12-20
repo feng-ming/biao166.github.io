@@ -97,7 +97,7 @@ sudo npm -g install weinre
 <p>说起 web 调试工具，我们可以如数家珍的列出 firebug、chrome开发者工具、IE开发者工具等，这大多是桌面端的，今天我们来介绍: Weinre.</p>
 <h2>一. <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank">Weinre</a>是什么</h2>
 <p>Weinre 意思就是 Web In Spector Remote，即是一种远程 web 调试工具。我们用 Weinre 可以在电脑上即时的更改手机上对应网页的页面元素、样式表，或是查看Javascript 变量，同时还可以看到手机上页面的错误和警告信息.</p>
-<img src='/_uploads/2013/05/Weinre组成结构.png?1387503817720' title='Weinre组成结构' />
+<img src='/_uploads/2013/05/Weinre组成结构.png?1387503957314' title='Weinre组成结构' />
 
 
 <blockquote>
@@ -110,7 +110,7 @@ sudo npm -g install weinre
 </blockquote>
 <h2>三. 开启服务</h2>
 <p>安装完成，直接 <code>weinre -help</code> 查看帮助。</p>
-<img src='/_uploads/2013/05/weinre-options.png?1387503817720' title='weinre-options' />
+<img src='/_uploads/2013/05/weinre-options.png?1387503957314' title='weinre-options' />
 
 
 <p><a id="more"></a></p>
@@ -118,12 +118,12 @@ sudo npm -g install weinre
 
 <p>这样就开启了 192.168.1.14 这台机器上的 weinre 服务， 默认端口是 8080</p>
 <p>访问 <cite>192.168.1.14:8080</cite>（需在 webkit 内核浏览器内）界面如下</p>
-<img inspector='' remote&quot;='' src='/_uploads/2013/05/web-inspector-remote.png?1387503817720' title='web' />
+<img inspector='' remote&quot;='' src='/_uploads/2013/05/web-inspector-remote.png?1387503957314' title='web' />
 
 
 <p>将 <code>http://192.168.1.14:8080/target/target-script-min.js#anonymous</code> 插入到目标调试页面。</p>
 <p>按照提示访问 <cite><a href="http://192.168.1.14:8080/client/#anonymous" target="_blank">http://192.168.1.14:8080/client/#anonymous</a></cite>, 界面如下</p>
-<img src='/_uploads/2013/05/weinre界面.png?1387503817720' title='weinre界面' />
+<img src='/_uploads/2013/05/weinre界面.png?1387503957314' title='weinre界面' />
 
 
 <p>其中包含了 weinre 服务的基本状况， Elements、Resources、Network、Timeline、Console几个 tab 界面，活生生一个 Chrome 开发者工具界面，如何操作这就不必说了吧。试用几天之后感觉不错，唯一的遗憾就是不能直接 Js调试。</p>
